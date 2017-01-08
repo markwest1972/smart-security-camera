@@ -22,4 +22,4 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 2. Run "*npm install*" to install node.js AWS dependancies.
 3. Update **config.json** with your AWS credentials and AWS Locale.
 4. Run "*sudo chmod +x*" on both the sh and js files (just to make sure that they can be run).
-5. Test the script by running "*./process-file.sh your-bucket-name file-to-upload*".  Your file should have been uploaded to s3 and the local copy deleted.
+5. Test the script by running "*./process-file.sh your-bucket-name file-to-upload*".  Your file should now have been uploaded to s3 and the local copy deleted.
