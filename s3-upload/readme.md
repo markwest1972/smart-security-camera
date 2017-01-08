@@ -7,7 +7,7 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 
 1. [AWS Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
 2. AWS s3 Bucket with an upload/ directory at root.
-3. [A recent node and npm verson](https://github.com/sdesalas/node-pi-zero).
+3. [A recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your Pi Zero.
 
 ## Contents
 
