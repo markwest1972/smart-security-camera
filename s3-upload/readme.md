@@ -5,9 +5,9 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 
 ## Pre requisites
 
-1. AWS 
-2. s3 Bucket with upload/ directory at root.
-3. Recent node and npm verson.
+1. [AWS Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
+2. AWS s3 Bucket with an upload/ directory at root.
+3. [A recent node and npm verson](https://github.com/sdesalas/node-pi-zero).
 
 ## Contents
 
@@ -21,5 +21,5 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 1. Clone this directory and it's to your machine - for example to "/usr/local/bin/scripts/".
 2. Run "npm install" to install node.js AWS dependancies.
 3. Update config.json with your AWS credentials.
-4. Run "sudo chmod +x" on both the sh and js files.
-5. Test the script by running "process-file.sh 
+4. Run "sudo chmod +x" on both the sh and js files (just to make sure that they can be run).
+5. Test the script by running "process-file.sh ".
