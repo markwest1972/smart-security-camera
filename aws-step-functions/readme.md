@@ -5,4 +5,6 @@ This directory contains AWS step function definitions.  At the time of writing i
 
 # Contents
 
+step-machine-image-processing
+
 
