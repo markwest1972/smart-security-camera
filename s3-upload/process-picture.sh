@@ -2,12 +2,12 @@
 
 echo starting s3-upload.sh
 
-echo uploading file $1
+echo uploading file $2
 
-node s3-upload-file.js your-bucket-name  $1
+node s3-upload-file.js $1  $2
 
-echo deleting file $1
+echo deleting file $2
 
-sudo rm $1
+sudo rm $2
 
 echo completed s3-upload.sh
