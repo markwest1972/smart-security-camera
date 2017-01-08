@@ -13,6 +13,5 @@ This directory contains AWS step function definitions.  At the time of writing i
 To define a step function you'll need to visit the [Step Function Console](https://aws.amazon.com/step-functions/) and create a State Machine. Some tips for doing this:
 
 1. Paste the contents of **step-function-image-processing.json** into the wizard.
-2. Call the resulting state machine **step-function-image-processing** to ensure that it works with the other 
-3. You'll need to define an IAM role for the step machine.  This role will require the AWSLambdaRole permission so that the Step Function can call Lambda functions.  There are different ways of specifying roles, but I prefer doing this from the IAM Console.
-
+2. Call the resulting state machine **step-function-image-processing** to ensure that it works with the other smart-security-camera components.
+3. You'll need to define an IAM role for the step machine.  This role will require the AWSLambdaRole permission so that the Step Function is allowed to call the Lambda Functions that it will orchestrate.  There are different ways of specifying IAM roles, but I prefer doing this from the IAM Console (available from the Services menu when logged into the AWS Console).
