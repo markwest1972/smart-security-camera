@@ -11,9 +11,9 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 
 ## Contents
 
-* config.json - aws credentials
-* package.json - aws node dependancies
-* s3-upload-file.js - node.js script
+* config.json - contains aws credentials
+* package.json - contains aws node dependancies
+* s3-upload-file.js - node.js script that uploads file
 * process-file.sh - bash script for running node.js script and removing file after upload
 
 ## How to use
