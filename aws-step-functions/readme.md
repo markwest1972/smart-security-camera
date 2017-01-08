@@ -10,8 +10,9 @@ This directory contains AWS step function definitions.  At the time of writing i
 
 # How to use
 
-To define a step function you'll need to visit the Step Function Console and create a State Machine.  
-1. Copy and paste the contents of **step-function-image-processing.json** into the wizard.
-2. Call the resulting state machine **step-function-image-processing**.
-3. You'll need to define a IAM role for the state machine.
+To define a step function you'll need to visit the [Step Function Console](https://aws.amazon.com/step-functions/) and create a State Machine. Some tips for doing this:
+
+1. Paste the contents of **step-function-image-processing.json** into the wizard.
+2. Call the resulting state machine **step-function-image-processing** to ensure that it works with the other 
+3. You'll need to define an IAM role for the step machine.  This role will require the AWSLambdaRole permission so that the Step Function can call Lambda functions.  There are different ways of specifying roles, but I prefer doing this from the IAM Console.
 
