@@ -13,11 +13,35 @@ This directory contains AWS lambda function definitions used by the smart-securi
 
 ## How to use
 
+### Prequisites
+
+1. All the prerequistes specified on the [repository readme.md](https://github.com/markwest1972/smart-security-camera).
+2. You'll need to be logged in to the [AWS Lambda Function console](https://console.aws.amazon.com/lambda/home).
+
 ### IAM Roles
 
-### Upload to AWS Lambda
+Lambda functions require an IAM role to access the relevant AWS resources.  This roles can be added via the [AWS Console](https://aws.amazon.com/console/)).  The best practice is to create a role for each specific combination of resources.  Note that all Lambda Functions should have **AWSLambdaBasicExecutionRole** by default as this allows them to amongst other things create logs in AWS Cloudwatch.
+
+For example:
+
+1. s3-trigger-image-processing.js needs access to s3 ().
+2. rekognition-image-assessment.js needs access to s3 and to rekognition ().
+3. evaluate-rekognition.js needs access to ().
+4. nodemailer-send-notification.js needs access to SES and s3  ().
+5. s3-archive-image.js needs  access to s3 ().
+6. nodemailer-error-handler needs access to SES  ().
+
+If you in a hurry you can just create one "super role" that includes all the resources your project will be using and then assign this role to all your functions.
+
+### Adding Lamdba Functions to AWS
+
+There are two ways of specifying adding Node.js code to Lambda Functions - either raw code/edit in browser or zip files.  Raw code/edit in browsers works for those functions that require additional libraries (the aws sdk is available by default).  Zip files are for those functions that use third party libraries.
+
+#### Plain text (edit in browser)
+
 
 #### Zip Files
 
 
 #### Plain text (edit in browser)
+
