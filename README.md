@@ -1,8 +1,6 @@
 # smart-security-camera
 
-This project elevates a simple webcemera with motion detection into a smart security camera, by adding cloud based image analysis.
-
-More information about the motivation for this project can be found here : https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/.
+This project elevates a [Pi Zero simple webcamera with Motion Detection](https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/) into a smart security camera by adding cloud based image analysis.
 
 A new blog post that explains the contents of this repository is coming soon.
 
@@ -15,9 +13,10 @@ A new blog post that explains the contents of this repository is coming soon.
 
 ### How to use
 
-Each subdirectory has simple instructions for using it's contents.
+Each subdirectory in this repository has simple instructions for using it's contents.
 
 ## Prerequisites
 
-1. You'll need [AWS Credentials and AWS Locale](http://docs.aws.amazon.com/gettingstarted/latest/awsgsg-intro/gsg-aws-intro.html).
+1. You'll need [AWS Credentials](http://docs.aws.amazon.com/gettingstarted/latest/awsgsg-intro/gsg-aws-intro.html).
+2. You'll need to be using a AWS Region that supports Rekognition, Step Functions, Lambda, s3 and SES (for example ).
 2. You'll need to have set up an [s3 bucket](https://aws.amazon.com/documentation/s3/).
