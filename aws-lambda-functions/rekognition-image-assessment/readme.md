@@ -4,7 +4,7 @@ Sends image from s3 to Amazon Rekognition for Image Processing.
 
 ## Contents
 
-1. rekognition-image-assessment.js - source code.
+1. **rekognition-image-assessment.js** - source code.
 
 ## How to use
 
