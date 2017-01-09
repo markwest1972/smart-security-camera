@@ -43,9 +43,14 @@ There are two ways of specifying adding Node.js code to Lambda Functions - eithe
 
 #### Plain text (edit in browser)
 
+This applies to all functions without the "nodemailer" prefix.
+
+From the [AWS Lambda Console](https://aws.amazon.com): 
+
+1. Choose "Create a Lambda Function".
+2. Select "Blank Function" as blueprint.
+
 
 #### Zip Files
 
-
-#### Plain text (edit in browser)
-
+See the README files for nodemailer-send-notification.js and nodemailer-error-handler.js for information on how to deploy these.
