@@ -1,6 +1,6 @@
 # s3-trigger-image-processing
 
-Monitors the s3 "/upload" directory for new image files and triggers their processing by calling the [step function](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions).
+Monitors the s3 buckets "/upload" directory for new image files and triggers their processing by calling the [step function](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions).
 
 ## Contents
 
