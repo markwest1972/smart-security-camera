@@ -4,8 +4,6 @@ exports.handler = (event, context, callback) => {
     // Moves processed files from upload to archive directory.  Normally the
     // last processing step. 
     //
-    // Errors will be thrown out and handled by the step function framework.
-    //
 
     var AWS = require('aws-sdk');
     var s3 = new AWS.S3({apiVersion: '2006-03-01'});
