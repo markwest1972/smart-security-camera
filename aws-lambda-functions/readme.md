@@ -14,3 +14,11 @@ For simplicity, each Lambda Function is located in it's own subdirectory, along 
 4. **[nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification)** - Sends an alarm email when the smart security camera detects a person.
 5. **[s3-archive-image.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/s3-archive-image)** - Moves the processed image to the s3 archive folder.
 6. **[nodemailer-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-error-handler)** - Sends emails when run time errors occur.
+
+## IAM Roles and Lambda Functions
+
+Depending on what they do, Lambda functions require access to various AWS resources. This access is granted through Roles. Each Lambda Function must have one Role assigned to them. These Roles contain all the "sub-roles" that give access to specific AWS Resources.
+
+In theory one can create a single "super role" that gives all Lambda Functions access to everything. This may be tempting, but goes against best practice and can pose a security risk.
+
+The relevant IAM Role requirements are located in the readme for each function.
