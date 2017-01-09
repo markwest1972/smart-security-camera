@@ -1,8 +1,7 @@
 exports.handler = (event, context) => {
    
     //
-    // Addition of new images to s3 bucket kick off a step function that will
-    // process the incoming images.
+    // Activated by upload of new images to s3 bucket.  Kicks off step function that will process images.
     //
    
     var AWS = require('aws-sdk');
