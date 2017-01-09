@@ -1,7 +1,7 @@
 
 # nodemailer-send-notification
 
-This directory contains an AWS Lamdba Definition for sending Error Emails for the smart-security-camera project.
+This directory contains an AWS Lamdba Definition for sending Alert Emails (with image attachment) for the smart-security-camera project.
 
 ## Contents
 
@@ -20,8 +20,8 @@ This function uses third party libraries.  This means that we have to create a z
 
 ### IAM Role
 
-Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions. 
+Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonS3ReadOnlyAccess", "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions. 
 
 ### Upload to AWS
 
-Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *nodemailer-error-handler* which uses the Zip file and IAM Role that you have just created.
+Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *nodemailer-send-notification* which uses the Zip file and IAM Role that you have just created.
