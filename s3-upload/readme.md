@@ -19,6 +19,7 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 ## How to use
 
 Assuming that you are uploading from a Raspberry Pi:
+
 1. Clone this directory and it's contents to your machine - for example to "*/usr/local/bin/scripts/*".
 2. Run "*npm install*" to install node.js AWS dependancies.
 3. Update **config.json** with your AWS credentials and AWS Locale.
