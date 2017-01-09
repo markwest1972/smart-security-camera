@@ -28,12 +28,12 @@ Therefore one should build up a unique role for each specific combination of res
 
 If we look closely at the specific requirements for each Lambda Function they look as follows:
 
-1. s3-trigger-image-processing.js - requires access to s3 (!).
-2. rekognition-image-assessment.js - requires access to s3 and to rekognition (!).
-3. evaluate-rekognition.js - requires no extra access privileges (!).
-4. nodemailer-send-notification.js - requires access to SES and s3 (!).
-5. s3-archive-image.js - requires access to s3 (!).
-6. nodemailer-error-handler - requires access to SES (!).
+1. **s3-trigger-image-processing.js** - requires access to s3 (!).
+2. **rekognition-image-assessment.js** - requires access to s3 and to rekognition (!).
+3. **evaluate-rekognition.js** - requires no extra access privileges (!).
+4. **nodemailer-send-notification.js** - requires access to SES and s3 (!).
+5. **s3-archive-image.js** - requires access to s3 (!).
+6. **nodemailer-error-handler** - requires access to SES (!).
 
 Here I've included the exact IAM roles that I have specified for each function.
 
