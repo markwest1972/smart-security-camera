@@ -8,11 +8,11 @@ For simplicity, each Lambda Function is located in it's own subdirectory, along 
 
 ## Contents
 
-Calls the step function:
+Calls the step function (should be implemented after the step function):
 
 1. **[s3-trigger-image-processing.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/s3-trigger-image-processing)** - Triggered when a new image is uploaded to an s3 upload folder.  
 
-Called by the step function:
+Called by the step function (should be implemented before the step function):
 
 1. **[rekognition-image-assessment.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/rekognition-image-assessment)** - Returns a list of labels describing each uploaded picture.
 2. **[evaluate-rekognition-labels.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/evaluate-rekognition-labels)** - Evaluates labels to find out if an alarm email should be sent.
