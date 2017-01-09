@@ -21,5 +21,4 @@ Once the trigger has been specified you can copy the code from s3-trigger-image-
 
 Warning: You'll need to update the arn....
 
-Tip: Use the "blank function" blueprint,.
-
+Tip: Use the "blank function" blueprint.
