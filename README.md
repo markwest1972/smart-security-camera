@@ -35,4 +35,4 @@ The following prerequisites are required for working with this repository.
 ##### Recent Version of Node.js
 
 1. [A recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your Pi Zero.
-2. A recent node and npm verson on your build machine if not using the Pi Zero.
+2. A recent node and npm verson on your build machine.
