@@ -11,12 +11,12 @@ A new blog post that explains the contents of this repository is coming soon.
 3. **[aws-lambda-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions)**: Source code for all aws lambda functions for handling image analysis and processing. JSON definition for orchestration of AWS Lambda Functions.
 4. **[aws-step-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions)**: Source code for orchestration of AWS Lambda Functions.
 
-### How to use
+## How to use
 
-Each subdirectory in this repository has simple instructions for using it's contents.
+Each subdirectory in this repository has simple instructions.  
 
-## Prerequisites
+### Prerequisites
 
 1. You'll need [AWS Credentials](http://docs.aws.amazon.com/gettingstarted/latest/awsgsg-intro/gsg-aws-intro.html).
 2. You'll need to be using a AWS Region that supports Rekognition, Step Functions, Lambda, s3 and SES (for example 'eu-west-1').
-2. You'll need an [s3 bucket](https://aws.amazon.com/documentation/s3/).
+3. You'll need an [s3 bucket](https://aws.amazon.com/documentation/s3/).
