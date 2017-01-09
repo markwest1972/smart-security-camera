@@ -1,7 +1,9 @@
 
 # aws-step-functions
 
-This directory contains AWS step function definitions used by the smart-security-camera project.  At the time of writing it is **not possible to edit a step function once it is created**.  Therefore you should **always** keep a copy of this file if you make any changes.
+This directory contains the AWS step function definition used by the smart-security-camera project. The step function orchestrates calls to the [AWS Lambda Functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions).
+
+At the time of writing it is **not possible to edit a step function once it is created**.  Therefore you should always keep a backup copy of any changes.
 
 ## Contents
 
@@ -10,16 +12,16 @@ This directory contains AWS step function definitions used by the smart-security
 
 ## How to use
 
-### Prerequisites
+### IAM Role 
 
-1. You'll need to have created an AWS user and be logged into the [Step Function Console](https://aws.amazon.com/step-functions/).
-2. You'll need to have created the [AWS Lambda functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions) in order to add them to your state machine.  You'll need the arn values for each function.
+Normally AWS will generate a role for you, but if it doesn't then you can use the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AWSLambdaRole" permission. This will allow your state machine to call AWS Lambda Functions.
 
 ### Setting up the Step Function (aka State Machine)
 
-To define a step function you'll need to visit the [Step Function Console](https://aws.amazon.com/step-functions/) and create a **State Machine**. Some tips for doing this:
+This is done from the [Step Function Console](https://aws.amazon.com/step-functions/).  Note that Amazon uses 'State Machine' and 'Step Function' interchangebly.
 
-1. Paste the contents of **step-function-image-processing.json** into the AWS Create State Machine wizard.
-2. Update the **Resource** flag for each state to reflect the correct **arn** value for each AWS Lambda Function.  The arn value is located in the top right hand corner of the screen when editing Lambda Functions.
-3. Call the resulting state machine **step-function-image-processing** to ensure that it works with the other [smart-security-camera](https://github.com/markwest1972/smart-security-camera) components.
-4. You'll need to define an IAM role for the state machine.  This role will require the **AWSLambdaRole** permission so that the Step Function is allowed to call the Lambda Functions that it will orchestrate.  One way to create and change IAM roles is from the IAM Console (available from the Services menu when logged into the [AWS Console](https://aws.amazon.com/console/)).
+Creating the step function is trivial - you basically copy the contents of the JSON file into the wizard.  The following tips might save your some time:
+
+1. Define your [AWS Lambda Functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions) before starting with the step function.
+2. Use the name *step-function-image-processing* - if you change it you'll have to also change the s3-trigger-image-processing function.
+3. Make sure the correct arn values are used in the Resource values.  The arn value for each Lambda Function is visible in the top right hand corner of the screen when viewing a Lambda Function definition.
