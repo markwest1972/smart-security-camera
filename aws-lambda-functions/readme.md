@@ -20,9 +20,13 @@ This directory contains AWS lambda function definitions used by the smart-securi
 
 ### IAM Roles
 
-Lambda functions require an IAM role to access the relevant AWS resources.  You can build roles via the [AWS Console](https://aws.amazon.com/console/)).  The best practice is to create one role for each specific combination of resources.  Note that all Lambda Function roles should include *AWSLambdaBasicExecutionRole* by default as this allows them to amongst other things create logs in AWS Cloudwatch. 
+Depending on what they do, Lambda functions access to various AWS resources.  This access is granted through Roles.  Each Lambda Function must have a Role assigned to them.  These Roles contain all the "sub-roles" that give access to the required AWS Resources.
 
-For example:
+In theory one can create a "super role" that gives all Lambda Functions access to everything.  This may be tempting, but goes against best practice and exposes potential security issues.
+
+Therefore one should build up a unique role for each specific combination of resources.  This can be done via the [AWS Console](https://aws.amazon.com/console/)).  All Lambda Functions should include *AWSLambdaBasicExecutionRole* by default as this allows them to amongst other things create logs in AWS Cloudwatch. 
+
+If we look closely at the requirements for each Lambda Function they look as follows:
 
 1. s3-trigger-image-processing.js - requires access to s3 ().
 2. rekognition-image-assessment.js - requires access to s3 and to rekognition (*AmazonS3ReadOnlyAccess* and *AmazonRekognitionReadOnlyAccess*).
@@ -30,8 +34,6 @@ For example:
 4. nodemailer-send-notification.js - requires access to SES and s3  (*AmazonSESFullAccess* and *AmazonS3ReadOnlyAccess*).
 5. s3-archive-image.js - requires access to s3 (*AmazonS3FullAccess*).
 6. nodemailer-error-handler - requires access to SES  (*AmazonSESFullAccess*).
-
-You can just create one "super role" that includes all the resources your project will be using and then assign this role to all your functions, but this can lead to security issues.  
 
 ### Adding Lamdba Functions to AWS
 
