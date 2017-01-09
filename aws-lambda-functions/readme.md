@@ -13,3 +13,11 @@ This directory contains AWS lambda function definitions used by the smart-securi
 
 ## How to use
 
+### IAM Roles
+
+### Upload to AWS Lambda
+
+#### Zip Files
+
+
+#### Plain text (edit in browser)
