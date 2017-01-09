@@ -9,7 +9,7 @@ This directory contains AWS lambda function definitions used by the smart-securi
 3. **evaluate-rekognition-labels.js** - Evaluates labels to find out if an alarm email should be sent.
 4. **[nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification)** - Sends an alarm email when the smart security camera detects a person.
 5. **s3-archive-image.js** - Moves the processed image to the s3 archive folder.
-6. **[nodemailer-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-error-
+6. **[nodemailer-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-error-handler]** - Sends emails when run time errors occur.
 
 ## How to use
 
