@@ -26,6 +26,6 @@ Depending on what they do, Lambda functions require access to various AWS resour
 
 In theory one can create a single "super role" that gives all Lambda Functions access to everything. This may be tempting, but goes against best practice and can pose a security risk.
 
-Therefore one should build up a unique role for each specific combination of resources.  This can be done via the [AWS Console](https://aws.amazon.com/console/)).  
+Therefore one should build up a unique role for each specific combination of resources.  This can be done via the [AWS Console](https://aws.amazon.com/console/).  
 
 The relevant IAM Role requirements are located in the readme for each function.
