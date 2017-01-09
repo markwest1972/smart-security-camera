@@ -15,7 +15,7 @@ This project elevates a [Pi Zero simple webcamera with Motion Detection](https:/
 
 Each subdirectory in this repository has simple instructions.  Note that there are naming dependancies in this project, so make sure that any naming changes are consistent.
 
-It is left to the user to work some details out for themselves.  Use the AWS Help Pages for support.
+It is left to the user to work some details out for themselves.  If you have problems, use the AWS Help Pages for support.
 
 ### Prerequisites
 
