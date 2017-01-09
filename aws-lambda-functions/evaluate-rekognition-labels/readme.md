@@ -10,7 +10,7 @@ This directory contains an AWS Lamdba Definition that evaluates whether or not t
 
 ### IAM Role
 
-Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions. 
+Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AWSLambdaBasicExecutionRole" permission. 
 
 ### Upload to AWS
 
