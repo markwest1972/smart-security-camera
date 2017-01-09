@@ -20,3 +20,4 @@ Each subdirectory in this repository has simple instructions.  Note that there a
 1. You'll need [AWS Credentials](http://docs.aws.amazon.com/gettingstarted/latest/awsgsg-intro/gsg-aws-intro.html).
 2. You'll need to be using a AWS Region that supports Rekognition, Step Functions, Lambda, s3 and SES (for example 'eu-west-1').
 3. You'll need an [s3 bucket](https://aws.amazon.com/documentation/s3/) where your images can be uploaded for processing.
+4. In the s3 Buckets preferences, grant 'List' permission to any authenticated AWS user.  This is a temporary workaround that prevents a 403 error when using a URL to add attachements to Alert emails.
