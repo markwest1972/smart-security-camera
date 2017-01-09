@@ -20,18 +20,18 @@ This directory contains AWS lambda function definitions used by the smart-securi
 
 ### IAM Roles
 
-Lambda functions require an IAM role to access the relevant AWS resources.  This roles can be added via the [AWS Console](https://aws.amazon.com/console/)).  The best practice is to create a role for each specific combination of resources.  Note that all Lambda Functions should have *AWSLambdaBasicExecutionRole* by default as this allows them to amongst other things create logs in AWS Cloudwatch.
+Lambda functions require an IAM role to access the relevant AWS resources.  You can build roles via the [AWS Console](https://aws.amazon.com/console/)).  The best practice is to create one role for each specific combination of resources.  Note that all Lambda Function roles should include *AWSLambdaBasicExecutionRole* by default as this allows them to amongst other things create logs in AWS Cloudwatch. 
 
 For example:
 
-1. s3-trigger-image-processing.js needs access to s3 ().
-2. rekognition-image-assessment.js needs access to s3 and to rekognition (*AmazonS3ReadOnlyAccess* and *AmazonRekognitionReadOnlyAccess*).
-3. evaluate-rekognition.js needs access to ().
-4. nodemailer-send-notification.js needs access to SES and s3  ().
-5. s3-archive-image.js needs  access to s3 ().
-6. nodemailer-error-handler needs access to SES  ().
+1. s3-trigger-image-processing.js - requires access to s3 ().
+2. rekognition-image-assessment.js - requires access to s3 and to rekognition (*AmazonS3ReadOnlyAccess* and *AmazonRekognitionReadOnlyAccess*).
+3. evaluate-rekognition.js - requires no extra access privileges.
+4. nodemailer-send-notification.js - requires access to SES and s3  (*AmazonSESFullAccess* and *AmazonS3ReadOnlyAccess*).
+5. s3-archive-image.js - requires access to s3 (*AmazonS3FullAccess*).
+6. nodemailer-error-handler - requires access to SES  (*AmazonSESFullAccess*).
 
-If you in a hurry you can just create one "super role" that includes all the resources your project will be using and then assign this role to all your functions.
+You can just create one "super role" that includes all the resources your project will be using and then assign this role to all your functions, but this can lead to security issues.  
 
 ### Adding Lamdba Functions to AWS
 
