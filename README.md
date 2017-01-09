@@ -19,5 +19,5 @@ Each subdirectory has simple instructions for using it's contents.
 
 ## Prerequisites
 
-1. You'll need AWS Credentials and locale.
-2. You'll need to have set up an s3 bucket.
+1. You'll need [AWS Credentials and AWS Locale](http://docs.aws.amazon.com/gettingstarted/latest/awsgsg-intro/gsg-aws-intro.html).
+2. You'll need to have set up an [s3 bucket](https://aws.amazon.com/documentation/s3/).
