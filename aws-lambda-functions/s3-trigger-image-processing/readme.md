@@ -14,11 +14,8 @@ Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role 
 
 ### Upload to AWS
 
-Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *s3-trigger-image-processing*.
-
-
-Once the trigger has been specified you can copy the code from s3-trigger-image-processing.js directly into the inline code editor.
-
-Warning: You'll need to update the arn....
-
-Tip: Use the "blank function" blueprint.
+1. Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function, using the "blank function" blueprint.
+2. Create a trigger for your s3 bucket with the event type "Object Create (All)" and the prefix "/upload".  This will ensure that this function is run for each new item uploaded to the "/upload" directory of your s3 bucket.
+3. Once the trigger has been specified you can copy the code from s3-trigger-image-processing.js directly into the inline code editor.
+4. You need to update the step machine arn reference (*stateMachineArn* variable) in the code.  At the time of writing it would seem that you actually need to run the step machine in the Step Machine Console in order to find the arn (look for the State Machine Arn and **not** the Execution ID). 
+5. Mke sure the function uses your IAM Role.
