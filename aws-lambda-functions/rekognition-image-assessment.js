@@ -3,8 +3,6 @@ exports.handler = (event, context, callback) => {
     //
     // Submits image from s3 bucket to Rekognition detectLabels function.
     //
-    // Exceptions will be passed out to the Step Function framework.
-    //
     
     // Get image details from event object
     var bucket = event.bucket; 
