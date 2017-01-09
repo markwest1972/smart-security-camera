@@ -25,3 +25,5 @@ Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role 
 ### Upload to AWS
 
 Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *nodemailer-send-notification* which uses the Zip file and IAM Role that you have just created.
+
+Tip: Use the "blank function" blueprint and skip the "configure triggers" prompt.
