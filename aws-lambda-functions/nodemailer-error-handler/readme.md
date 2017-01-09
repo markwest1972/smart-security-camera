@@ -7,11 +7,6 @@ This directory contains an AWS Lamdba Definition for sending Error Emails for th
 1. **index.js** - Node.js code triggered by exceptions in the processing of incoming images.
 2. **package.json** - npm dependancies.
 
-## Prerequisites 
-
-1. All the prerequisites specified on the [repository readme.md](https://github.com/markwest1972/smart-security-camera).
-2. [A recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your build machine.
-
 ## How to use
 
 ### Creating a Zip File
