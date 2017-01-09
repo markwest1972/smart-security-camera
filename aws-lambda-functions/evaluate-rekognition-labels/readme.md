@@ -16,4 +16,6 @@ Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role 
 
 Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *evaluate-rekognition-labels* and copy the code from evaluate-rekognition-labels.js directly into the inline code editor.
 
-Tip: Use the "blank function" blueprint and skip the "configure triggers" prompt.
+Ensure that the function uses your newly created IAM Role.
+
+Tip: Use the "blank function" blueprint and skip the "configure triggers" prompt when creating the function.
