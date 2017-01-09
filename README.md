@@ -3,7 +3,7 @@ A Pi Zero and Motion based webcamera that forwards images to Amazon Web Services
 
 More information can be found here : https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/.
 
-This is a work in progress - more information coming soon!
+This is a work in progress - more information (with new blog posts) coming soon!
 
 ## Contents
 
