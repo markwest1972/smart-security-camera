@@ -1,7 +1,7 @@
 exports.handler = (event, context, callback) => {
     
     //
-    // Evaluates labels from Rekognition and decides whether or not an  emergancy situation has been detected.
+    // Evaluates labels from Rekognition and decides whether or not an emergency situation has been detected.
     //
     
     try {
@@ -9,6 +9,7 @@ exports.handler = (event, context, callback) => {
         var labels = event.Labels;
         var key = 'Name';
       
+        // List should be extended with all "trigger" labels from Rekognition
         for (key in labels) {
           if (labels.hasOwnProperty(key)) {
             if (labels[key].Name.indexOf('Human') > -1) callback(null, Object.assign({"Alert": "true"}, event));
@@ -31,5 +32,4 @@ exports.handler = (event, context, callback) => {
         
     // If we get this far then no 'alert' label was found        
     callback(null, Object.assign({"Alert": "false"}, event));
-
 };
