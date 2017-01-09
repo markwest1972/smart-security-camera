@@ -36,3 +36,11 @@ The following prerequisites are required for working with this repository.
 
 1. [A recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your Pi Zero.
 2. A recent node and npm verson on your build machine.
+
+## To Do List
+
+Coming soon: 
+
+1. Better formatting of emails.
+2. UUID for tracking calls through the AWS stack.
+3. Better error handling.
