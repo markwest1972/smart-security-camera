@@ -20,12 +20,12 @@ This directory contains AWS lambda function definitions used by the smart-securi
 
 ### IAM Roles
 
-Lambda functions require an IAM role to access the relevant AWS resources.  This roles can be added via the [AWS Console](https://aws.amazon.com/console/)).  The best practice is to create a role for each specific combination of resources.  Note that all Lambda Functions should have **AWSLambdaBasicExecutionRole** by default as this allows them to amongst other things create logs in AWS Cloudwatch.
+Lambda functions require an IAM role to access the relevant AWS resources.  This roles can be added via the [AWS Console](https://aws.amazon.com/console/)).  The best practice is to create a role for each specific combination of resources.  Note that all Lambda Functions should have *AWSLambdaBasicExecutionRole* by default as this allows them to amongst other things create logs in AWS Cloudwatch.
 
 For example:
 
 1. s3-trigger-image-processing.js needs access to s3 ().
-2. rekognition-image-assessment.js needs access to s3 and to rekognition ().
+2. rekognition-image-assessment.js needs access to s3 and to rekognition (*AmazonS3ReadOnlyAccess* and *AmazonRekognitionReadOnlyAccess*).
 3. evaluate-rekognition.js needs access to ().
 4. nodemailer-send-notification.js needs access to SES and s3  ().
 5. s3-archive-image.js needs  access to s3 ().
