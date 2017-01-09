@@ -4,7 +4,7 @@ Archives files after successfull processing (moves them from /upload to /archive
 
 ## Contents
 
-1. s3-archive-image.js - source code.
+1. **s3-archive-image.js** - source code.
 
 ## How to use
 
