@@ -3,10 +3,10 @@
 
 This directory contains resources for uploading files to Amazon s3.  These are primarily meant for use with the smart-security-camera project, but can be used for any s3 uploading requirements.
 
-## Pre-requisites
+## Prerequisites
 
-1. [AWS Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).
-2. AWS s3 Bucket with an upload/ directory at root.
+1. All the prerequisites specified on the [repository readme.md](https://github.com/markwest1972/smart-security-camera).
+2. An upload/ directory at the root of your s3 bucket.
 3. [A recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your Pi Zero.
 
 ## Contents
@@ -20,7 +20,7 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 
 Assuming that you are uploading from a Raspberry Pi:
 
-1. Clone this directory and it's contents to your machine - for example to "*/usr/local/bin/scripts/*".
+1. Use Git to clone this directory and it's contents to your machine - for example to "*/usr/local/bin/scripts/*".
 2. Run "*npm install*" to install node.js AWS dependancies.
 3. Update **config.json** with your AWS credentials and AWS Locale.
 4. Run "*sudo chmod +x*" on both the sh and js files (just to make sure that they can be run).
