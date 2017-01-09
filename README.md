@@ -19,4 +19,4 @@ Each subdirectory in this repository has simple instructions.
 
 1. You'll need [AWS Credentials](http://docs.aws.amazon.com/gettingstarted/latest/awsgsg-intro/gsg-aws-intro.html).
 2. You'll need to be using a AWS Region that supports Rekognition, Step Functions, Lambda, s3 and SES (for example 'eu-west-1').
-3. You'll need an [s3 bucket](https://aws.amazon.com/documentation/s3/).
+3. You'll need an [s3 bucket](https://aws.amazon.com/documentation/s3/) to upload your images to.
