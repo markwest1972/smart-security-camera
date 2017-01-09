@@ -15,7 +15,7 @@ This project elevates a [Pi Zero simple webcamera with Motion Detection](https:/
 
 Each subdirectory in this repository has simple instructions.  Note that there are naming dependancies in this project, so make sure that any naming changes are consistent.
 
-It is left to the user to work some details out for themselves.  If you have problems, use the AWS Help Pages for support.
+All the code is provided as is, and it is left to the user to work out the fine details for themselves. The AWS documentation is very useful here. Remember that [GIYF](http://www.giyf.com) :)
 
 ### Prerequisites
 
