@@ -4,7 +4,7 @@ This directory contains an AWS Lamdba Definition that evaluates whether or not t
 
 ## Contents
 
-1. evaluate-rekognition-labels.js - source code.
+1. *evaluate-rekognition-labels.js* - source code.
 
 ## How to use
 
