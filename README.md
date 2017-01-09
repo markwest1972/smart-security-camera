@@ -1,8 +1,8 @@
 # smart-security-camera
 
-This project elevates a [Pi Zero simple webcamera with Motion Detection](https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/) into a smart security camera by adding cloud based image analysis.
+This project elevates a [Pi Zero simple webcamera with Motion Detection](https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/) into a smart security camera by adding cloud based image analysis via [AWS Rekognition](https://aws.amazon.com/rekognition/).
 
-A new blog post that explains the contents of this repository is coming soon.
+** A new blog post that explains the contents of this repository is coming soon.**
 
 ## Contents
 
@@ -13,7 +13,7 @@ A new blog post that explains the contents of this repository is coming soon.
 
 ## How to use
 
-Each subdirectory in this repository has simple instructions.  
+Each subdirectory in this repository has simple instructions.  Note that there are naming dependancies in this project, so make sure that any naming changes are consistent.
 
 ### Prerequisites
 
