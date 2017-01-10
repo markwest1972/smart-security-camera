@@ -11,7 +11,7 @@ Monitors the s3 buckets "/upload" directory for new image files and triggers the
 ### IAM Role
 
 1. Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AWSLambdaBasicExecutionRole" permission. 
-2. You also need to manually add an inline policy that will give the Lambda Function permission to run Step Functions:
+2. Using the [AWS IAM Console](https://aws.amazon.com/console/) you also need to manually add an inline policy that will give this Lambda Function permission to run Step Functions:
 ```json
 {
     "Version": "2012-10-17",
