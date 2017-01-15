@@ -8,7 +8,7 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 * **config.json** - contains AWS credentials.
 * **package.json** - contains AWS node dependancies.
 * **s3-upload-file.js** - node.js script that uploads file.
-* **process-file.sh** - bash script for running node.js script and removing file after upload.
+* **process-file.sh** - bash script for running node.js script and removing file after upload.  Called by Motion according to the on_picture_save parameter in Motions configuration file. 
 
 ## How to use
 
