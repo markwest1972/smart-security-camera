@@ -18,6 +18,10 @@ This function uses third party libraries.  This means that we have to create a z
 2. Use "npm install" to download dependancies.
 3. Create a Zip file of index.js, package.json and the node_modules directory.  Note that these should be at the root of the Zip File.
 
+### Memory Configuration
+
+When configuring the Lambda Function, increase the memory allocation from 128 to 256.
+
 ### IAM Role
 
 Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonS3ReadOnlyAccess", "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions. 
