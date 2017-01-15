@@ -1,13 +1,13 @@
 //
-// Uploads pictures to an upload directory in your s3 bucket.
+// Uploads pictures to s3, where they will trigger a Lambda process.
 //
 // This module requires two command-line arguments:
 // 1. Destination bucket
 // 2. File to upload
 //
-// Example : "node s3-upload-image-file.js <s3-bucket-name> <path-to-image>"
+// Example : "node s3-upload-image-file.js <s3-bucket> <path-to-image>"
 //
-// This module also requires config.json file with AWS authorisation and locale parameters.
+// Requires config.json file with AWS authorisation and locale parameters.
 //
 
 // Load the SDK for JavaScript
@@ -16,7 +16,7 @@ var path = require('path');
 var fs = require('fs');
 
 // Load configration file
-AWS.config.loadFromPath('./config.json');
+AWS.config.loadFromPath('/usr/local/bin/scripts/s3-upload/config.json');
 
 // Create S3 service object
 s3 = new AWS.S3({apiVersion: '2006-03-01'});
@@ -25,7 +25,8 @@ s3 = new AWS.S3({apiVersion: '2006-03-01'});
 var file = process.argv[3];
 var fileStream = fs.createReadStream(file);
 fileStream.on('error', function(err) {
-  console.log('File Error', err);
+  
+    console.log('File Error', err);
 });
 
 // Populate upload parameters
