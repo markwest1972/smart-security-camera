@@ -19,6 +19,8 @@ Each subdirectory in this repository has simple instructions.  Note that there a
 
 All the code is provided as is, and it is left to the user to work out the fine details for themselves. The AWS documentation is very useful here. Remember that [GIYF](http://www.giyf.com) :)
 
+If you think you've found typo, or need help getting things to work, get in contact and I'll try to help!
+
 ### Prerequisites
 
 The following prerequisites are required for working with this repository.
