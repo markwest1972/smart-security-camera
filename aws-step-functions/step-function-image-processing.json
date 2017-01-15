@@ -5,12 +5,12 @@
 
         "nodemailer-error-handler": {
             "Type": "Task",
-            "Resource": "arn:aws:lambda:eu-west-1:429019047841:function:nodemailer-error-handler",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:nodemailer-error-handler",
             "End": true
         },
         "rekognition-image-assessment": {
             "Type": "Task",
-            "Resource": "arn:aws:lambda:eu-west-1:429019047841:function:rekognition-image-assessment",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:rekognition-image-assessment",
             "Catch": [{
                 "ErrorEquals": ["States.ALL"],
                 "Next": "nodemailer-error-handler"
@@ -19,7 +19,7 @@
         },
         "evaluate-rekognition-labels": {
             "Type": "Task",
-            "Resource": "arn:aws:lambda:eu-west-1:429019047841:function:evaluate-rekognition-labels",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:evaluate-rekognition-labels",
             "Catch": [{
                 "ErrorEquals": ["States.ALL"],
                 "Next": "nodemailer-error-handler"
@@ -45,7 +45,7 @@
 
         "nodemailer-send-notification": {
             "Type": "Task",
-            "Resource": "arn:aws:lambda:eu-west-1:429019047841:function:nodemailer-send-notification",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:nodemailer-send-notification",
             "Catch": [{
                 "ErrorEquals": ["States.ALL"],
                 "Next": "nodemailer-error-handler"
@@ -54,7 +54,7 @@
         },
         "s3-archive-image": {
             "Type": "Task",
-            "Resource": "arn:aws:lambda:eu-west-1:429019047841:function:s3-archive-image",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:s3-archive-image",
             "Catch": [{
                 "ErrorEquals": ["States.ALL"],
                 "Next": "nodemailer-error-handler"
