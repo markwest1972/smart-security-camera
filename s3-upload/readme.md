@@ -19,3 +19,4 @@ Assuming that you are uploading from a Raspberry Pi Zero:
 3. Update **config.json** with your AWS credentials and AWS Locale.
 4. Run "*sudo chmod +x*" on both the sh and js files (just to make sure that they can be run).
 5. Test the script by running "*./process-file.sh your-bucket-name file-to-upload*".  Your file should now have been uploaded to s3 and the local copy deleted.
+6. Update the *on_picture_save* parameter in Motions configuration file to point to *process-file.sh*.
