@@ -11,9 +11,17 @@ exports.handler = (event, context, callback) => {
     // Retrieve parameters from export handler event
     var bucket = event.bucket;
     var oldFilename = event.key;
+        var alert = event.Alert;
 
     // "New file" retains same name, just the path is changed from upload to archive
-    var newFilename = event.key.replace('upload/', 'archive/');
+    var newFilename = '';
+    
+    // In which subdirectory shall the file be saved?
+    if (alert == 'true'){
+        newFilename = event.key.replace('upload/', 'archive/alerts/');          // All Alerts
+    }else{
+        newFilename = event.key.replace('upload/', 'archive/falsepositives/');  // False positives
+    }
     
     // Parameters for copy function
     var archiveParams = {
