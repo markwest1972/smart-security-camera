@@ -1,6 +1,6 @@
 # s3-archive-image
 
-Archives files after successfull processing (moves them from /upload to /archive in s3).
+Archives files after successfull processing (moves them from "/upload" to the relevant "/archive" subdirectory in s3).
 
 ## Contents
 
