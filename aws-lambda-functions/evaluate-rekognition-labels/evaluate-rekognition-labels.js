@@ -17,6 +17,11 @@ exports.handler = (event, context, callback) => {
             if (labels[key].Name.indexOf('Person') > -1) callback(null, Object.assign({"Alert": "true"}, event));
             if (labels[key].Name.indexOf('Male') > -1) callback(null, Object.assign({"Alert": "true"}, event));
             if (labels[key].Name.indexOf('Female') > -1) callback(null, Object.assign({"Alert": "true"}, event));
+            if (labels[key].Name.indexOf('Apparel') > -1) callback(null, Object.assign({"Alert": "true"}, event));
+            if (labels[key].Name.indexOf('Clothing') > -1) callback(null, Object.assign({"Alert": "true"}, event));
+            if (labels[key].Name.indexOf('Selfie') > -1) callback(null, Object.assign({"Alert": "true"}, event));
+            if (labels[key].Name.indexOf('Costume') > -1) callback(null, Object.assign({"Alert": "true"}, event));
+            if (labels[key].Name.indexOf('Portrait') > -1) callback(null, Object.assign({"Alert": "true"}, event));
           }
         }
     
