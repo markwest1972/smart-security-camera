@@ -20,6 +20,10 @@ Called by the step function (should be implemented before the step function):
 4. **[s3-archive-image.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/s3-archive-image)** - Moves the processed image to the s3 archive folder.
 5. **[nodemailer-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-error-handler)** - Sends emails when run time errors occur.
 
+## Timeouts
+
+When configuring the Lambda Functions you should mke sure that they have a timeout of at least 10 seconds.  This is most relevant for those Lambda Functions that call other AWS services such as Rekognition or SES.  Increasing the timeout will prevent your Lambda Function from exiting while it awaits a response.
+
 ## IAM Roles and Lambda Functions
 
 Depending on what they do, Lambda functions require access to various AWS resources. This access is granted through Roles. Each Lambda Function must have one Role assigned to them. These Roles contain all the "sub-roles" that give access to specific AWS Resources.
