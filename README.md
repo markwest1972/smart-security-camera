@@ -35,7 +35,7 @@ The following prerequisites are required for working with this repository.
 1. You'll need a [s3 bucket](https://aws.amazon.com/documentation/s3/) where your images can be uploaded for processing.
 2. The bucket will need two root directories : "/upload" and "/archive". 
 3. Directly under the "/archive" directory, create the "/alerts" and "/falsepositives" subdirectories. 
-4. In the preferences for your s3 Bucket, grant 'Read' permission to any authenticated AWS user.  This is a  workaround that prevents a 403 error when using a [URL to add attachments to Alert emails](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification).
+4. In the preferences for your S3 Bucket, grant 'Read' permission to any authenticated AWS user (under 'manage group permissions'.  This is a  workaround that prevents a 403 error when using a [URL to add attachments to Alert emails](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification).
 ![screen shot 2017-05-09 at 07 42 06](https://cloud.githubusercontent.com/assets/9844371/25836976/38e69372-348b-11e7-984f-22b02dae5ac0.png)
 
 ##### Recent Version of Node.js
