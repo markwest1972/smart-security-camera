@@ -51,8 +51,8 @@ The following prerequisites are required for working with this repository.
                 "s3:List*"
             ],
             "Resource": [
-                "arn:aws:s3:::smart-security-camera-upload",
-                "arn:aws:s3:::smart-security-camera-upload/*"
+                "arn:aws:s3:::your-bucket-name",
+                "arn:aws:s3:::your-bucket-name/*"
             ]
         }
     ]
