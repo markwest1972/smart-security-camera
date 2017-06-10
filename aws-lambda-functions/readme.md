@@ -1,6 +1,6 @@
 # aws-lambda-functions
 
-This directory contains AWS Lambda Function definitions used by the smart-security-camera project.  
+This directory contains Node.js based AWS Lambda Function definitions used by the smart-security-camera project.  [Java versions are also availlable](https://github.com/markwest1972/smart-security-camera-java).
 
 These functions trigger, or are triggered by the the step function defined in the [aws-step-functions module](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions).
 
