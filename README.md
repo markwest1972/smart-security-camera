@@ -6,6 +6,8 @@ You can read more about this solution in the following blog posts:
 * [Smarten up Your Pi Zero Web Camera with Image Analysis and Amazon Web Services Part 1](https://utbrudd.bouvet.no/2017/01/10/smarten-up-your-pi-zero-web-camera-with-image-analysis-and-amazon-web-services-part-1).
 * [Smarten up Your Pi Zero Web Camera with Image Analysis and Amazon Web Services Part 2](https://utbrudd.bouvet.no/2017/01/10/smarten-up-your-pi-zero-web-camera-with-image-analysis-and-amazon-web-services-part-2).
 
+You can also check out [this presentation](https://www.youtube.com/watch?v=20H-7QOaPFs&t=2387s) from Riga Dev Days where I describe the solution.  The [slides from this talk are available](https://www.slideshare.net/markawest/building-a-smart-security-camera-with-raspberry-pi-zero-nodejs-and-the-cloud-riga-dev-days-and-geecon).
+
 ## Contents
 
 1. **[s3-upload](https://github.com/markwest1972/smart-security-camera/tree/master/s3-upload)**: Handles upload of image files from Pi Zero to Amazon s3.
