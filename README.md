@@ -8,7 +8,7 @@ You can read more about this solution in the following blog posts:
 
 You can also check out [this presentation](https://www.youtube.com/watch?v=20H-7QOaPFs) from Riga Dev Days where I describe the solution.  The [slides from this talk are also available](https://www.slideshare.net/markawest/building-a-smart-security-camera-with-raspberry-pi-zero-nodejs-and-the-cloud-riga-dev-days-and-geecon).
 
-This version of the solution is heavily based on Node.js.  [A Java version is also available](https://github.com/markwest1972/smart-security-camera-java).
+This version of the solution is based on Node.js.  Java versions of some of the components [are also available](https://github.com/markwest1972/smart-security-camera-java).
 
 ## Contents
 
