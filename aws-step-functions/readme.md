@@ -25,3 +25,4 @@ Creating the step function is trivial - you basically copy the contents of the J
 1. Define your [AWS Lambda Functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions) before starting with the step function.
 2. Use the name *step-function-image-processing* - if you change it you'll have to also change the s3-trigger-image-processing function.
 3. Make sure the correct arn values are used in the Resource values.  The arn value for each Lambda Function is visible in the top right hand corner of the screen when viewing a Lambda Function definition.
+4. Make sure also that the region is correctly set.  This needs to point to the region where your Lambda Functions are uploaded.
