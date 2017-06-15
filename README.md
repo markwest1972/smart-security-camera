@@ -62,9 +62,7 @@ The following prerequisites are required for working with this repository.
     ]
 }
 ```
-
-This is a  workaround that prevents a 403 error when using a [URL to add attachments to Alert emails](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification).
-
+To make your S3 even more secure you can swop "*" with the **ARN** for the IAM role associated with your [nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification) Lambda Function.
 
 ##### Recent Version of Node.js
 
