@@ -62,7 +62,7 @@ The following prerequisites are required for working with this repository.
     ]
 }
 ```
-To make your S3 even more secure you can swop "*" with the **ARN** for the IAM role associated with your [nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification) Lambda Function.
+To make your S3 even more secure you can swop "*" with the full **ARN** for the IAM role associated with your [nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification) Lambda Function.  The will look something like "arn:aws:iam::123456789123:role/nodemailer-send-notification-role".
 
 ##### Recent Version of Node.js
 
