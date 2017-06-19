@@ -10,7 +10,7 @@ For simplicity, each Lambda Function is located in it's own subdirectory, along 
 
 Calls the step function (should be implemented after the step function):
 
-1. **[s3-trigger-image-processing.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/s3-trigger-image-processing)** - Triggered when a new image is uploaded to an s3 upload folder.  
+1. **[s3-trigger-image-processing.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/s3-trigger-image-processing)** - Triggered when a new image is uploaded to an s3 upload folder.  
 
 Called by the step function (should be implemented before the step function):
 
