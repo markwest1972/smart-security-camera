@@ -1,27 +1,27 @@
 # smart-security-camera
 
-This project elevates a [Pi Zero simple webcamera with Motion Detection](https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/) into a smart security camera by adding cloud based image analysis via [AWS Rekognition](https://aws.amazon.com/rekognition/).
+This project elevates a [Pi Zero simple webcamera with Motion Detection](https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/) into a smart security camera by adding Cloud based image analysis via [AWS Rekognition](https://aws.amazon.com/rekognition/).
 
-You can read more about this solution in the following blog posts: 
+You can read more about this solution in the following blog posts:
 * [Smarten up Your Pi Zero Web Camera with Image Analysis and Amazon Web Services Part 1](https://utbrudd.bouvet.no/2017/01/10/smarten-up-your-pi-zero-web-camera-with-image-analysis-and-amazon-web-services-part-1).
 * [Smarten up Your Pi Zero Web Camera with Image Analysis and Amazon Web Services Part 2](https://utbrudd.bouvet.no/2017/01/10/smarten-up-your-pi-zero-web-camera-with-image-analysis-and-amazon-web-services-part-2).
 
 You can also check out [this presentation](https://www.youtube.com/watch?v=20H-7QOaPFs) from Riga Dev Days where I describe the solution.  The [slides from this talk are also available](https://www.slideshare.net/markawest/building-a-smart-security-camera-with-raspberry-pi-zero-nodejs-and-the-cloud-riga-dev-days-and-geecon).
 
-This version of the solution is based on Node.js.  Java versions of some of the components [are also available](https://github.com/markwest1972/smart-security-camera-java).
+Both __Java__ and __Node.js__ versions of the AWS Lambda Functions are provided.  
 
 ## Contents
 
 1. **[s3-upload](https://github.com/markwest1972/smart-security-camera/tree/master/s3-upload)**: Handles upload of image files from Pi Zero to Amazon s3.
 2. **[motion-config](https://github.com/markwest1972/smart-security-camera/tree/master/motion-config)**: Configuration files for Motion (running on a Pi Zero).
-3. **[aws-lambda-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions)**: Source code for all aws lambda functions for handling image analysis and processing. JSON definition for orchestration of AWS Lambda Functions.
-4. **[aws-step-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions)**: Source code for orchestration of AWS Lambda Functions.
+3. **[aws-lambda-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions)**: Choose between Node.js or Java source code for all AWS lambda functions.
+4. **[aws-step-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions)**: JSON definitions for orchestration of AWS Lambda Functions.
 
 ## How to use
 
 **If you think you've found a typo, or need help getting things to work, get in contact and I'll try to help!**
 
-Each subdirectory in this repository has simple instructions.  Note that there are naming dependancies in this project, so make sure that any naming changes are apllied across the repository.
+Each subdirectory in this repository has simple instructions.  Note that there are naming dependancies in this project, so make sure that any naming changes are applied across the repository.
 
 All the code is provided as is, and it is left to the user to work out the fine details for themselves. The AWS documentation is very useful here. Remember that [GIYF](http://www.giyf.com) :)
 
@@ -37,8 +37,8 @@ The following prerequisites are required for working with this repository.
 ##### s3 Bucket
 
 1. You'll need a [s3 bucket](https://aws.amazon.com/documentation/s3/) where your images can be uploaded for processing.
-2. The bucket will need two root directories : "/upload" and "/archive". 
-3. Directly under the "/archive" directory, create the "/alerts" and "/falsepositives" subdirectories. 
+2. The bucket will need two root directories : "/upload" and "/archive".
+3. Directly under the "/archive" directory, create the "/alerts" and "/falsepositives" subdirectories.
 4. In the "Permissions->Bucket Policy" tab for your S3 Bucket, set up the following Bucket Policy:
 
 ```json
@@ -67,4 +67,4 @@ To make your S3 even more secure you can swop "*" with the full **ARN** for the 
 ##### Recent Version of Node.js
 
 1. You'll need [a recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your Pi Zero.
-2. You'll also require a recent node and npm verson on your build machine.
+2. If you are using the Node.js based Lambda Functions then you'll also require a recent node and npm verson on your build machine.
