@@ -14,11 +14,11 @@ Calls the step function (should be implemented after the step function):
 
 Called by the step function (should be implemented before the step function):
 
-1. **[rekognition-image-assessment.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/rekognition-image-assessment)** - Returns a list of labels describing each uploaded picture.
-2. **[evaluate-rekognition-labels.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/evaluate-rekognition-labels)** - Evaluates labels to find out if an alarm email should be sent.
-3. **[nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification)** - Sends an alarm email when the smart security camera detects a person.
-4. **[s3-archive-image.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/s3-archive-image)** - Moves the processed image to the s3 archive folder.
-5. **[nodemailer-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-error-handler)** - Sends emails when run time errors occur.
+1. **[rekognition-image-assessment.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/rekognition-image-assessment)** - Returns a list of labels describing each uploaded picture.
+2. **[evaluate-rekognition-labels.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/evaluate-rekognition-labels)** - Evaluates labels to find out if an alarm email should be sent.
+3. **[nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/nodemailer-send-notification)** - Sends an alarm email when the smart security camera detects a person.
+4. **[s3-archive-image.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/s3-archive-image)** - Moves the processed image to the s3 archive folder.
+5. **[nodemailer-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/nodemailer-error-handler)** - Sends emails when run time errors occur.
 
 ## Timeouts
 
