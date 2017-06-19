@@ -2,7 +2,7 @@
 
 POJO for transferring data between Java based Lambda Functions. 
 
-AWS used Jackson to serialise Java objects to JSON and vice versa.
+AWS uses Jackson to serialise Java objects to JSON and vice versa.
 
 ## Contents
 
