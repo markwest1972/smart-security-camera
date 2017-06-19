@@ -8,5 +8,5 @@ The names of the Node.js and Java Lambda Functions differ.  Therefore we require
 
 ## Choose your language
 
-1. [Node.js]().
-2. [Java]().
+1. [Node.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions/nodejs).
+2. [Java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions/java).
