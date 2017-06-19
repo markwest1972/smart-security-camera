@@ -10,19 +10,19 @@ For simplicity, each Lambda Function is located in it's own subdirectory, along 
 
 Calls the step function (should be implemented after the step function):
 
-1. **[s3-trigger-image-processing.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/s3-trigger-image-processing)** - Triggered when a new image is uploaded to an s3 upload folder.  
+1. **[s3-trigger-image-processing-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/s3-trigger-image-processing-java.java)** - Triggered when a new image is uploaded to an s3 upload folder.  
 
 Called by the step function (should be implemented before the step function):
 
-1. **[rekognition-image-assessment.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/rekognition-image-assessment)** - Returns a list of labels describing each uploaded picture.
-2. **[evaluate-rekognition-labels.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/evaluate-rekognition-labels)** - Evaluates labels to find out if an alarm email should be sent.
-3. **[nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-send-notification)** - Sends an alarm email when the smart security camera detects a person.
-4. **[s3-archive-image.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/s3-archive-image)** - Moves the processed image to the s3 archive folder.
-5. **[nodemailer-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodemailer-error-handler)** - Sends emails when run time errors occur.
+1. **[rekognition-image-assessment-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/rekognition-image-assessment-java)** - Returns a list of labels describing each uploaded picture.
+2. **[rekognition-evaluate-labels-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/rekognition-evaluate-labels-java)** - Evaluates labels to find out if an alarm email should be sent.
+3. **[ses-send-notification-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-send-notification-java)** - Sends an alarm email when the smart security camera detects a person.
+4. **[s3-archive-image-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/s3-archive-image-java)** - Moves the processed image to the s3 archive folder.
+5. **[ses-error-handler-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-error-handler-java)** - Sends emails when run time errors occur.
 
 ## Timeouts
 
-When configuring the Lambda Functions you should mke sure that they have a timeout of at least 10 seconds.  This is most relevant for those Lambda Functions that call other AWS services such as Rekognition or SES.  Increasing the timeout will prevent your Lambda Function from exiting while it awaits a response.
+When configuring the Lambda Functions you should mke sure that they have a timeout of at least 15 seconds.  This is most relevant for those Lambda Functions that call other AWS services such as Rekognition or SES.  Increasing the timeout will prevent your Lambda Function from exiting while it awaits a response.
 
 ## IAM Roles and Lambda Functions
 
