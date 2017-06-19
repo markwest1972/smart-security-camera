@@ -38,5 +38,4 @@ The variable STEP_MACHINE_ARN needs to be declared and defined in the Lambda Fun
 1. Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function, using the "blank function" blueprint.
 2. Create a trigger for your s3 bucket with the event type "Object Create (All)" and the prefix "/upload".  This will ensure that this function is run for each new item uploaded to the "/upload" directory of your s3 bucket.
 3. Once the trigger has been specified you can copy the code from s3-trigger-image-processing.js directly into the inline code editor.
-4. You need to update the step machine arn reference (*stateMachineArn* variable) in the code.  At the time of writing it would seem that you actually need to run the step machine in the Step Machine Console in order to find the arn (look for the State Machine Arn and **not** the Execution ID). 
-5. Ensure that the function uses your newly created IAM Role.
+4. Ensure that the function uses your newly created IAM Role.
