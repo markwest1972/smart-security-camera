@@ -14,11 +14,15 @@ Calls the step function (should be implemented after the step function):
 
 Called by the step function (should be implemented before the step function):
 
-1. **[rekognition-image-assessment-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/rekognition-image-assessment-java)** - Returns a list of labels describing each uploaded picture.
-2. **[rekognition-evaluate-labels-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/rekognition-evaluate-labels-java)** - Evaluates labels to find out if an alarm email should be sent.
-3. **[ses-send-notification-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-send-notification-java)** - Sends an alarm email when the smart security camera detects a person.
-4. **[s3-archive-image-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/s3-archive-image-java)** - Moves the processed image to the s3 archive folder.
-5. **[ses-error-handler-java.java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-error-handler-java)** - Sends emails when run time errors occur.
+1. **[rekognition-image-assessment(https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/rekognition-image-assessment)** - Returns a list of labels describing each uploaded picture.
+2. **[rekognition-evaluate-labels](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/rekognition-evaluate-labels)** - Evaluates labels to find out if an alarm email should be sent.
+3. **[ses-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-send-notification)** - Sends an alarm email when the smart security camera detects a person.
+4. **[s3-archive-image](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/s3-archive-image)** - Moves the processed image to the s3 archive folder.
+5. **[ses-error-handler](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-error-handler)** - Sends emails when run time errors occur.
+
+POJO for communication between Jaav based Lambda Functions:
+
+* **[lambda-parameters](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/lambda-parameters)**.
 
 ## Timeouts
 
