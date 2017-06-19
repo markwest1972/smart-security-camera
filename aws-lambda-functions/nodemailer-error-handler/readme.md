@@ -21,6 +21,10 @@ This function uses third party libraries.  This means that we have to create a z
 
 Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions. 
 
+### Environment Variables
+
+The variables EMAIL_RECIPIENT and EMAIL_FROM needs to be declared and defined in the Lambda Function console.  These should point to the recipient of your emails and the from address respectively. 
+
 ### Upload to AWS
 
 Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *nodemailer-error-handler* which uses the Zip file and IAM Role that you have just created.
