@@ -28,11 +28,9 @@ Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role 
 
 ### Environment Variables
 
-The variables EMAIL_RECIPIENT and EMAIL_FROM need to be declared as Environment Variables and defined in the Lambda Function console.  These should point to the _recipient_ of your emails and the _from_ addresses respectively. 
+The variables EMAIL_RECIPIENT and EMAIL_FROM need to be declared as Environment Variables and defined in the Lambda Function console.  These should point to the _recipient_ of your emails and the _from_ addresses respectively. Remember that the EMAIL_FROM address [needs to be verified in SES](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html).
 
-In addtion you'll need to define the process.env.S3_URL_PREFIX environment variable. This points to the S3 region where your bucket is located.  For example mine is set to 'https://s3-eu-west-1.amazonaws.com/'.
-
-Remember that the EMAIL_FROM address [needs to be verified in SES](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html).
+You'll also need to define the process.env.S3_URL_PREFIX environment variable. This points to the S3 region where your bucket is located.  For example mine is set to 'https://s3-eu-west-1.amazonaws.com/'.
 
 ### Upload to AWS
 
