@@ -21,8 +21,8 @@ exports.handler = (event, context, callback) => {
 
   // Set up email parameters
   var mailOptions = mailOptions = {
-      from: '"Smart Security Camera" <markwest1972@gmail.com>',
-      to: 'markwest1972@gmail.com',
+      from: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_RECIPIENT,
       subject: '⏰ Alarm Event detected! ⏰',
       text: JSON.stringify(labels),
       html: '<pre>'+JSON.stringify(labels, null, 2)+'</pre>',
@@ -30,7 +30,7 @@ exports.handler = (event, context, callback) => {
 
         {
             filename: localFile,
-            path: 'https://s3-eu-west-1.amazonaws.com/'+ bucket + '/'+ filename
+            path: process.env.S3_URL_PREFIX + bucket + '/'+ filename
         }
       ]
   }
