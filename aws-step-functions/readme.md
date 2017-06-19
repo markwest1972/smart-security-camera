@@ -6,7 +6,7 @@ The original version of this camera was created using Node.js.  After some month
 
 The names of the Node.js and Java Lambda Functions differ.  Therefore we require two Step Function definitions.
 
-## Choose your language
+## Choose the language your are using for your Lambda Functions
 
 1. [Node.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions/nodejs).
 2. [Java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions/java).
