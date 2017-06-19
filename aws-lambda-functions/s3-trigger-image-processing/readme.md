@@ -29,6 +29,10 @@ Monitors the s3 buckets "/upload" directory for new image files and triggers the
 }
 ```
 
+### Environment Variables
+
+The variable STEP_MACHINE_ARN needs to be declared and defined in the Lambda Function console.  This should point to the ARN of your Step Function. 
+
 ### Upload to AWS
 
 1. Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function, using the "blank function" blueprint.
