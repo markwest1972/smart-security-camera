@@ -20,11 +20,19 @@ This function uses third party libraries.  This means that we have to create a z
 
 ### Memory Configuration
 
-When configuring the Lambda Function, increase the memory allocation from 128 to 256.
+This function often times out with the default memory allocation (128).  Increasing the memory allocation from 128 to 256 normally resolves this issue.
 
 ### IAM Role
 
 Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonS3ReadOnlyAccess", "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions. 
+
+### Environment Variables
+
+The variables EMAIL_RECIPIENT and EMAIL_FROM need to be declared as Environment Variables and defined in the Lambda Function console.  These should point to the _recipient_ of your emails and the _from_ addresses respectively. 
+
+In addtion you'll need to define the process.env.S3_URL_PREFIX environment variable. This points to the S3 region where your bucket is located.  For example mine is set to 'https://s3-eu-west-1.amazonaws.com/'.
+
+Remember that the EMAIL_FROM address [needs to be verified in SES](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html).
 
 ### Upload to AWS
 
