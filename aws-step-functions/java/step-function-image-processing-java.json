@@ -1,0 +1,65 @@
+{
+    "Comment": "Process incoming image files to find out if an email warning is required",
+    "StartAt": "rekognition-image-assessment-java",
+    "States": {
+
+        "ses-error-handler-java": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:ses-error-handler-java",
+            "End": true
+        },
+        "rekognition-image-assessment-java": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:rekognition-image-assessment-java",
+            "Catch": [{
+                "ErrorEquals": ["States.ALL"],
+                "Next": "ses-error-handler-java"
+            }],
+            "Next": "rekognition-evaluate-labels-java"
+        },
+        "rekognition-evaluate-labels-java": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:rekognition-evaluate-labels-java",
+            "Catch": [{
+                "ErrorEquals": ["States.ALL"],
+                "Next": "ses-error-handler-java"
+            }],
+            "Next": "make-alert-decision"
+        },
+
+        "make-alert-decision": {
+            "Type": "Choice",
+            "Choices": [{
+                    "Variable": "$.sendAlert",
+                    "BooleanEquals": true,
+                    "Next": "ses-send-notification-java"
+                },
+                {
+                    "Variable": "$.sendAlert",
+                    "BooleanEquals": false,
+                    "Next": "s3-archive-image-java"
+                }
+            ],
+            "Default": "s3-archive-image-java"
+        },
+
+        "ses-send-notification-java": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:ses-send-notification-java",
+            "Catch": [{
+                "ErrorEquals": ["States.ALL"],
+                "Next": "ses-error-handler-java"
+            }],
+            "Next": "s3-archive-image-java"
+        },
+        "s3-archive-image-java": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:s3-archive-image-java",
+            "Catch": [{
+                "ErrorEquals": ["States.ALL"],
+                "Next": "ses-error-handler-java"
+            }],
+            "End": true
+        }
+    }
+}
