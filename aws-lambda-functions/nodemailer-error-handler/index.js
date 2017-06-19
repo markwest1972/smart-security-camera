@@ -16,8 +16,8 @@ exports.handler = (event, context, callback) => {
 
   // Set up email parameters
   var mailOptions = mailOptions = {
-      from: '"Smart Security Camera" <markwest1972@gmail.com>',
-      to: 'markwest1972@gmail.com',
+      from: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_RECIPIENT,
       subject: '⚠️ Error processing image ⚠️',
       text: errorMessage,
       html: '<pre>'+errorMessage+'</pre>'
