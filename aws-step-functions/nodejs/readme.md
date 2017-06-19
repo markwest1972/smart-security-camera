@@ -1,7 +1,7 @@
 
-# aws-step-functions
+# Node.js aws-step-functions
 
-This directory contains the AWS step function definition used by the smart-security-camera project. The step function orchestrates calls to the [AWS Lambda Functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions).
+This directory contains the Node.js AWS step function definition used by the smart-security-camera project. The step function orchestrates calls to the [AWS Lambda Functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions).
 
 At the time of writing it is **not possible to edit a step function once it is created**.  Therefore you should always keep a backup copy of any changes.
 
@@ -12,7 +12,7 @@ At the time of writing it is **not possible to edit a step function once it is c
 
 ## How to use
 
-### IAM Role 
+### IAM Role
 
 Normally AWS will generate a role for you, but if it doesn't then you can use the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AWSLambdaRole" permission. This will allow your state machine to call AWS Lambda Functions.
 
