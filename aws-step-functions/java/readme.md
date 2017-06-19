@@ -23,6 +23,6 @@ This is done from the [Step Function Console](https://aws.amazon.com/step-functi
 Creating the step function is trivial - you basically copy the contents of the JSON file into the wizard.  The following tips might save your some time:
 
 1. Define your [AWS Lambda Functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions) before starting with the step function.
-2. Make sure that you note the arn of your Step Function.  This will be used in the s3-trigger-image-processing function.
+2. Make sure that you note the arn of your Step Function.  This will be used in the *s3-trigger-image-processing-java* function.
 3. Make sure the correct arn values are used in the Resource values.  The arn value for each Lambda Function is visible in the top right hand corner of the screen when viewing a Lambda Function definition.
 4. Make sure also that the region is correctly set.  This needs to point to the region where your Lambda Functions are uploaded.
