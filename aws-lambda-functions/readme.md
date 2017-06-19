@@ -33,3 +33,7 @@ In theory one can create a single "super role" that gives all Lambda Functions a
 Therefore one should build up a unique role for each specific combination of resources.  This can be done via the [AWS Console](https://aws.amazon.com/console/).  
 
 The relevant IAM Role requirements are located in the readme for each function.
+
+## Environment variable
+
+Certain configuration strings have been moved out of the code and into [Environment Variables](http://docs.aws.amazon.com/lambda/latest/dg/env_variables.html).  These Environment Variables should be set for each Lambda Function.  See the Readme files for each Lambda Function to find out which Variable needs to be set up.
