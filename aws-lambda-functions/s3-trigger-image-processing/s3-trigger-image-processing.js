@@ -26,7 +26,7 @@ exports.handler = (event, context) => {
      
             // Setup the parameters for triggering the step function
             var params = {
-                stateMachineArn: 'arn:aws:states:eu-west-1:111112222233:stateMachine:state-function-image-processing', 
+                stateMachineArn: process.env.STEP_MACHINE_ARN, 
                 input: '{"bucket":"'+bucket+'", "key":"'+key+'"}'
             };
   
