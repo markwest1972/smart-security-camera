@@ -23,7 +23,7 @@ Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role 
 
 ### Environment Variables
 
-The variables EMAIL_RECIPIENT and EMAIL_FROM needs to be declared and defined in the Lambda Function console.  These should point to the recipient of your emails and the from address respectively. 
+The variables EMAIL_RECIPIENT and EMAIL_FROM (i.e. 'Smart Security Camera <markwest1972@gmail.com>') needs to be declared as Environment Variables and defined in the Lambda Function console.  These should point to the _recipient_ of your emails and the _from_ addresses respectively. Remember that the EMAIL_FROM address [needs to be verified in SES](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html).
 
 ### Upload to AWS
 
