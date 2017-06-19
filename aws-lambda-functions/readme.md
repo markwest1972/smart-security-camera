@@ -36,4 +36,4 @@ The relevant IAM Role requirements are located in the readme for each function.
 
 ## Environment variables
 
-Certain configuration strings have been moved out of the code and into [Environment Variables](http://docs.aws.amazon.com/lambda/latest/dg/env_variables.html).  These Environment Variables should be set for each Lambda Function.  See the Readme files for each Lambda Function to find out which Variable needs to be set up.
+Certain configuration strings have been moved out of the code and into [Environment Variables](http://docs.aws.amazon.com/lambda/latest/dg/env_variables.html).  These Environment Variables should be set for each Lambda Function.  See the Readme files for each Lambda Function to find out which (if any) variables need to be set up.
