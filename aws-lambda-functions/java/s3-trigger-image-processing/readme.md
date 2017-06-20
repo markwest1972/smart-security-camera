@@ -1,6 +1,6 @@
 # s3-trigger-image-processing
 
-Monitors the s3 buckets "/upload" directory for new image files and triggers their processing by calling the [step function](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions).
+Monitors the S3 buckets "/upload" directory for new image files and triggers their processing by calling the [step function](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions).
 
 ## Contents
 
@@ -10,7 +10,7 @@ Monitors the s3 buckets "/upload" directory for new image files and triggers the
 
 ### IAM Role
 
-1. Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AWSLambdaBasicExecutionRole" and "AmazonS3FullAccess" permissions. 
+1. Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AWSLambdaBasicExecutionRole" and "AmazonS3FullAccess" permissions.
 2. Using the [AWS IAM Console](https://aws.amazon.com/console/) you also need to manually add an inline policy to your new created IAM Role, giving permission to run Step Functions:
 ```json
 {
@@ -31,7 +31,7 @@ Monitors the s3 buckets "/upload" directory for new image files and triggers the
 
 ### Environment Variables
 
-The variable STEP_MACHINE_ARN needs to be declared and defined in the Lambda Function console.  This should point to the ARN of your Step Function. 
+The variable STEP_MACHINE_ARN needs to be declared and defined in the Lambda Function console.  This should point to the ARN of your Step Function.
 
 ### Upload to AWS
 
