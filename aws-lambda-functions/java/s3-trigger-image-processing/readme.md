@@ -36,5 +36,5 @@ The variable STEP_MACHINE_ARN needs to be declared and defined in the Lambda Fun
 ### Upload to AWS
 
 1. Using the [Eclipse AWS Plugin](https://aws.amazon.com/lambda), create a new Lambda Function called *s3-trigger-image-processing-java* using the Java source and pom file.
-2. Ensure that the function uses your newly created IAM Role.
+2. Ensure that the new Lambda Function uses your newly created IAM Role.
 3. Create a trigger (that will call this function) for your S3 bucket with the event type "Object Create (All)" and the prefix "/upload". This will ensure that your function is run for each new item uploaded to the "/upload" directory of your s3 bucket.
