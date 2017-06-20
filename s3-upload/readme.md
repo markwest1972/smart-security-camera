@@ -10,6 +10,10 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 * **s3-upload-file.js** - node.js script that uploads file.
 * **process-file.sh** - bash script for running node.js script and removing file after upload.  Called by Motion according to the *on_picture_save* parameter in Motions configuration file. 
 
+## Where is the Java version of this function?
+
+There isn't one.
+
 ## How to use
 
 Assuming that you are uploading from a Raspberry Pi Zero:
