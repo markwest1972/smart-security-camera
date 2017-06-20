@@ -4,7 +4,7 @@ The original version of this camera was created using Node.js.  After some month
 
 ## Interoperability
 
-At the time of writing you need to choose either Node.js or Java for all your Lambda Functions.
+At the time of writing you need to choose **either** Node.js or Java for all your Lambda Functions.
 
 A later version will allow for 100% interoperability.
 
