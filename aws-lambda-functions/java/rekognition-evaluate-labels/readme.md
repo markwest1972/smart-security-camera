@@ -1,4 +1,4 @@
-# evaluate-rekognition-labels
+# rekognition-evaluate-labels
 
 This directory contains an AWS Lamdba Definition that evaluates whether or not to send an alert email for an uploaded picture.
 
