@@ -65,8 +65,3 @@ The following prerequisites are required for working with this repository.
 }
 ```
 To make your S3 even more secure you can swop "*" with the full **ARN** for the **IAM role** associated with your [nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/nodemailer-send-notification) or [ses-send-notifcation](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-send-notification) Lambda Function.
-
-##### Recent Version of Node.js
-
-1. You'll need [a recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your Pi Zero.
-2. If you are using the Node.js based Lambda Functions then you'll also require a recent node and npm verson on your build machine.
