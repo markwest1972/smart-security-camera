@@ -19,6 +19,6 @@ The variables EMAIL_RECIPIENT and EMAIL_FROM need to be declared as Environment 
 
 ### Upload to AWS
 
-Using the [Eclipse AWS Plugin](https://aws.amazon.com/lambda), create a new Lambda Function called *ses-error-handler-java* using the Java source and Pom file.
+Using the [Eclipse AWS Toolkit](http://docs.aws.amazon.com/toolkit-for-eclipse/v1/user-guide/welcome.html), create a new Lambda Function called *ses-error-handler-java* using the Java source and Pom file.
 
 Remember to also use the IAM Role that you have just created.
