@@ -15,6 +15,6 @@ Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role 
 
 ### Upload to AWS
 
-Using the [Eclipse AWS Plugin](https://aws.amazon.com/lambda), create a new Lambda Function called *rekognition-evaluate-labels-java* using the Java source and pom file.
+Using the [Eclipse AWS Toolkit](http://docs.aws.amazon.com/toolkit-for-eclipse/v1/user-guide/welcome.html), create a new Lambda Function called *rekognition-evaluate-labels-java* using the Java source and pom file.
 
 Ensure that the function uses your newly created IAM Role.
