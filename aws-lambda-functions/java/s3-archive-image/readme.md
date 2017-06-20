@@ -4,7 +4,8 @@ Archives files after successfull processing (moves them from "/upload" to the re
 
 ## Contents
 
-1. **s3-archive-image.js** - source code.
+1. **S3ArchiveImageHandler.java** - source code.
+2. **pom.xml** - Maven pom file.
 
 ## How to use
 
@@ -14,8 +15,6 @@ Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role 
 
 ### Upload to AWS
 
-Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *s3-archive-image* and copy the code from s3-archive-image.js directly into the inline code editor.
+Using the [Eclipse AWS Plugin](https://aws.amazon.com/lambda), create a new Lambda Function called *rekognition-evaluate-labels-java* using the Java source and pom file.
 
 Ensure that the function uses your newly created IAM Role.
-
-Tip: Use the "blank function" blueprint and skip the "configure triggers" prompt when creating the function.
