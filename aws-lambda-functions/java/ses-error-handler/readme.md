@@ -1,21 +1,13 @@
-# nodemailer-error-handler
+# ses-error-handler
 
-This directory contains an AWS Lamdba Definition for sending Error Emails for the smart-security-camera project.
+This directory contains an AWS Lambda Definition for sending Error Emails for the smart-security-camera project.
 
 ## Contents
 
-1. **index.js** - Node.js code triggered by exceptions in the processing of incoming images.
-2. **package.json** - npm dependancies.
+1. **SesErrorHandler.java** - Java code triggered by exceptions in the processing of incoming images.
+2. **pom.xml** - Maven build file.
 
 ## How to use
-
-### Creating a Zip File
-
-This function uses third party libraries.  This means that we have to create a zip file containing the code and all dependancies.
-
-1. Get a local copy of this directory by using git clone.
-2. Use "npm install" to download dependancies.
-3. Create a Zip file of index.js, package.json and the node_modules directory.  Note that these should be at the root of the Zip File.
 
 ### IAM Role
 
@@ -27,6 +19,6 @@ The variables EMAIL_RECIPIENT and EMAIL_FROM need to be declared as Environment 
 
 ### Upload to AWS
 
-Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *nodemailer-error-handler* which uses the Zip file and IAM Role that you have just created.
+Using the [Eclipse AWS Plugin](https://aws.amazon.com/lambda), create a new Lambda Function called *ses-error-handler-java* using the Java source and Pom file.
 
-Tip: Use the "blank function" blueprint and skip the "configure triggers" prompt.
+Remember to also use the IAM Role that you have just created.
