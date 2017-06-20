@@ -65,3 +65,13 @@ The following prerequisites are required for working with this repository.
 }
 ```
 To make your S3 even more secure you can swop "*" with the full **ARN** for the **IAM role** associated with your [nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/nodemailer-send-notification) or [ses-send-notifcation](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-send-notification) Lambda Function.
+
+## Suggested Implementation Plan 
+
+1. [Set up your PiZero webcamera with Motion](https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/).
+2. Create an AWS account.
+3. Create an S3 Bucket.
+4. Implement [s3-upload](https://github.com/markwest1972/smart-security-camera/tree/master/s3-upload) from PiZero to S3 Bucket.
+5. Implement all your [aws-lambda-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions) and test them individually.
+6. Implement your [aws-step-function](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions). Test it.
+7. Set up the S3 Trigger ([Java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/s3-trigger-image-processing) or [Node.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/s3-trigger-image-processing)) that triggers the Step Function.
