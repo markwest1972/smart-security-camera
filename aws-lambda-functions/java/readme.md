@@ -1,5 +1,3 @@
-# UNDER CONSTRUCTION #
-
 # aws-lambda-functions (Java)
 
 This directory contains Java based AWS Lambda Function definitions used by the smart-security-camera project.  [Node.js versions are also available](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs).
