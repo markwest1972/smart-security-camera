@@ -4,7 +4,7 @@ Monitors the s3 buckets "/upload" directory for new image files and triggers the
 
 ## Contents
 
-1. **s3-archive-image.js** - source code.
+1. **S3TriggerImageProcessingHandler.java** - source code.
 
 ## How to use
 
