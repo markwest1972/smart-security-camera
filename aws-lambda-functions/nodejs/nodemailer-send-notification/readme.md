@@ -5,7 +5,7 @@ This directory contains an AWS Lamdba Definition for sending Alert Emails (with 
 
 ## Contents
 
-1. **index.js** - Node.js code triggered by exceptions in the processing of incoming images.
+1. **index.js** - source code.
 2. **package.json** - npm dependancies.
 
 ## How to use
