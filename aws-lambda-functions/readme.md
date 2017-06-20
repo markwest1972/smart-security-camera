@@ -11,7 +11,7 @@ At the time of writing you need to choose **either** Node.js or Java for all you
 1. [Node.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs).
 2. [Java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java).
 
-### Functions in Node.js and Java
+### Function Stack in Node.js and Java
 
 | Java Implementation | Node.js Implementation | Purpose |
 | ------------- | ------------- | ------------- |
