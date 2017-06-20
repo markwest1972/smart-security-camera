@@ -14,6 +14,10 @@ This directory contains resources for uploading files to Amazon s3.  These are p
 
 There isn't one.
 
+## Prerequisites
+
+You'll need [a recent node and npm verson](https://github.com/sdesalas/node-pi-zero) on your Pi Zero.
+
 ## How to use
 
 Assuming that you are uploading from a Raspberry Pi Zero:
