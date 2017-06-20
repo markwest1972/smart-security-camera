@@ -36,7 +36,7 @@ The following prerequisites are required for working with this repository.
 1. [AWS Credentials](http://docs.aws.amazon.com/gettingstarted/latest/awsgsg-intro/gsg-aws-intro.html).
 2. You'll also need to be using a AWS Region that supports Rekognition, Step Functions, Lambda, s3 and SES (for example 'eu-west-1').
 
-##### s3 Bucket
+##### S3 Bucket
 
 1. You'll need a [s3 bucket](https://aws.amazon.com/documentation/s3/) where your images can be uploaded for processing.
 2. The bucket will need two root directories : "/upload" and "/archive".
