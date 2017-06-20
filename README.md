@@ -8,7 +8,9 @@ You can read more about this solution in the following blog posts:
 
 You can also check out [this presentation](https://www.youtube.com/watch?v=20H-7QOaPFs) from Riga Dev Days where I describe the solution.  The [slides from this talk are also available](https://www.slideshare.net/markawest/building-a-smart-security-camera-with-raspberry-pi-zero-nodejs-and-the-cloud-riga-dev-days-and-geecon).
 
-Both __Java__ and __Node.js__ versions of the AWS Lambda Functions are provided.  
+## Java or Node.js?
+
+Both __Java__ and __Node.js__ versions of the AWS Lambda Functions are provided.  Due to naming differences I have also provided seperate Step Function definitions for both the Java and Node.js versions.
 
 ## Contents
 
