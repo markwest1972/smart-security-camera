@@ -4,7 +4,7 @@ The original version of this camera was created using Node.js.  After some month
 
 ## Why two Step Functions?
 
-The names of the Node.js and Java Lambda Functions differ.  Therefore we require two Step Function definitions.
+The names of the Node.js and Java Lambda Functions differ, along with the name of the variable used in a decision point in the Step Function.  
 
 ## Choose the language your are using for your Lambda Functions
 
