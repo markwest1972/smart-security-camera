@@ -19,15 +19,29 @@ exports.handler = (event, context, callback) => {
   // Add timestamp to file name
   var localFile = filename.replace('upload/', '');
 
+  // Set up HTML Email
+  var htmlString = "<pre><u><b>Label &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Confidence</u></b><br>";
+  for (var i = 0; i < labels.length; i++) {
+    htmlString += "" + labels[i].Name + "" + Array(22-labels[i].Name.length).join('&nbsp;');
+    htmlString += "" + labels[i].Confidence.toFixed(1) + "</b><br>";
+  };
+  htmlString += "</pre>";
+
+  // Set up Text Email
+  var textString = "Label          Confidence\n";
+  for (var i = 0; i < labels.length; i++) {
+    textString += "" + labels[i].Name + "" + Array(22-labels[i].Name.length).join(' ');
+    textString += "" + labels[i].Confidence.toFixed(1) + "\n";
+  };
+
   // Set up email parameters
   var mailOptions = mailOptions = {
       from: process.env.EMAIL_FROM,
       to: process.env.EMAIL_RECIPIENT,
       subject: '⏰ Alarm Event detected! ⏰',
-      text: JSON.stringify(labels),
-      html: '<pre>'+JSON.stringify(labels, null, 2)+'</pre>',
+      text: textString,
+      html: htmlString,
       attachments: [
-
         {
             filename: localFile,
             path: process.env.S3_URL_PREFIX + bucket + '/'+ filename

@@ -24,7 +24,7 @@ This function often times out with the default memory allocation (128).  Increas
 
 ### IAM Role
 
-Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonS3ReadOnlyAccess", "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions. 
+Using the [AWS IAM Console](https://aws.amazon.com/console/) create an IAM Role containing the "AmazonS3ReadOnlyAccess", "AmazonSESFullAccess" and "AWSLambdaBasicExecutionRole" permissions.
 
 ### Environment Variables
 
@@ -37,3 +37,7 @@ You'll also need to define the process.env.S3_URL_PREFIX environment variable. T
 Using the [AWS Lambda Console](https://aws.amazon.com/lambda), create a new Lambda Function called *nodemailer-send-notification* which uses the Zip file and IAM Role that you have just created.
 
 Tip: Use the "blank function" blueprint and skip the "configure triggers" prompt.
+
+### Acknowledgement
+
+Thanks to Matt Dorn, who contributed a version of this code that provides a more user friendly printout of the Rekogniton labels.
