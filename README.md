@@ -64,7 +64,7 @@ The following prerequisites are required for working with this repository.
     ]
 }
 ```
-To make your S3 even more secure you can swop "*" with the full **ARN** for the **IAM role** associated with your [nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/nodemailer-send-notification) or [ses-send-notifcation](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-send-notification) Lambda Function.
+To make your S3 even more secure you can swop "*" with the full **ARN** for the **IAM role** associated with your [nodemailer-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/nodemailer-send-notification) or [ses-send-notification](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/ses-send-notification) Lambda Function.
 
 ## Suggested Implementation Plan 
 
