@@ -28,7 +28,7 @@ exports.handler = (event, context, callback) => {
     }catch(err){
         
         // Log errors
-        var errorMessage =  'Error in [evaluate-rekognition-labels].\r' + 
+        var errorMessage =  'Error in [rekognition-evaluate-labels].\r' + 
                                 '   Function input ['+JSON.stringify(event, null, 2)+'].\r' +  
                                 '   Error ['+err+'].';
         log.console(errorMessage);
