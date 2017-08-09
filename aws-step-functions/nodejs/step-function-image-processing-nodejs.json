@@ -15,11 +15,11 @@
                 "ErrorEquals": ["States.ALL"],
                 "Next": "nodemailer-error-handler"
             }],
-            "Next": "evaluate-rekognition-labels"
+            "Next": "rekognition-evaluate-labels"
         },
-        "evaluate-rekognition-labels": {
+        "rekognition-evaluate-labels": {
             "Type": "Task",
-            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:evaluate-rekognition-labels",
+            "Resource": "arn:aws:lambda:eu-west-1:111112222233:function:rekognition-evaluate-labels",
             "Catch": [{
                 "ErrorEquals": ["States.ALL"],
                 "Next": "nodemailer-error-handler"
