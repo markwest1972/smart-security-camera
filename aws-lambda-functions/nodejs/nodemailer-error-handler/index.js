@@ -3,8 +3,8 @@ exports.handler = (event, context, callback) => {
   var aws = require('aws-sdk');
   var nodemailer = require('nodemailer');
   var sesTransport = require('nodemailer-ses-transport');
-  var ses = new aws.SES({apiVersion: '2010-12-01', region: 'eu-west-1'}); // Change the Region to the one you are using
-  var s3 = new aws.S3();
+  var ses = new aws.SES({apiVersion: '2010-12-01', region: process.env.AWS_REGION}); 
+  var s3 = new aws.S3({apiVersion: '2006-03-01', region: process.env.AWS_REGION});
 
   // Set up ses as tranport for email
   var transport = nodemailer.createTransport(sesTransport({
