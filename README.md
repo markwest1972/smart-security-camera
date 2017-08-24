@@ -74,6 +74,6 @@ To make your S3 even more secure you can swop "*" with the full **ARN** for the 
 2. Create an AWS account.
 3. Create an S3 Bucket.
 4. Implement [s3-upload](https://github.com/markwest1972/smart-security-camera/tree/master/s3-upload) from PiZero to S3 Bucket.
-5. Implement all your [aws-lambda-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions) and test them individually.
+5. Implement all your [aws-lambda-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions) and test them individually.
 6. Implement your [aws-step-function](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions). Test it.
 7. Set up the S3 Trigger ([Java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/s3-trigger-image-processing) or [Node.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/s3-trigger-image-processing)) that triggers the Step Function.
