@@ -5,7 +5,7 @@ exports.handler = (event, context) => {
     //
    
     var AWS = require('aws-sdk');
-    var s3 = new AWS.S3({apiVersion: '2006-03-01'});
+    var s3 = new AWS.S3({apiVersion: '2006-03-01', region: process.env.AWS_REGION});
    
     // Derive the bucket and filename from the event
     var bucket = event.Records[0].s3.bucket.name;
