@@ -6,7 +6,7 @@ exports.handler = (event, context, callback) => {
     //
 
     var AWS = require('aws-sdk');
-    var s3 = new AWS.S3({apiVersion: '2006-03-01'});
+    var s3 = new AWS.S3({apiVersion: '2006-03-01', region: process.env.AWS_REGION});
     
     // Retrieve parameters from export handler event
     var bucket = event.bucket;
