@@ -1,56 +1,98 @@
 package no.markawest.smartsecuritycamera;
 
-import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.amazonaws.services.rekognition.AmazonRekognition;
-import com.amazonaws.services.rekognition.AmazonRekognitionClientBuilder;
-import com.amazonaws.services.rekognition.model.DetectLabelsRequest;
-import com.amazonaws.services.rekognition.model.DetectLabelsResult;
-import com.amazonaws.services.rekognition.model.Image;
-import com.amazonaws.services.rekognition.model.Label;
-import com.amazonaws.services.rekognition.model.S3Object;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
- * Calls the the Rekognition Service with a snapshot uploaded from the web
- * camera. Snapshot has been uploaded to S3. The resulting labels are returned
- * as part of the output.
- *
- * Evaluates the labels returned from AWS Rekognition and sets an alert flag
- * accordingly.
- * 
- * Part of the Smart Security Camera project.
+ * Parameters for Lambda Functions involved in the processing of snapshots from
+ * the the Smart Security Camera project.
  * 
  * @author mark.west
  */
-public class RekognitionImageAssessmentHandler implements RequestHandler<Parameters, Parameters> {
+public class Parameters {
+
+    // S3 Key for uploaded snapshot
+    private String s3Key = null;
+
+    // S3 Bucket containing uploaded snapshot
+    private String s3Bucket = null;
+
+    // Shall we send an alert email or not?
+    private Boolean sendAlert = Boolean.FALSE;
+
+    // Labels and confidence scores returned from AWS Rekognition
+    private Map<String, Float> rekognitionLabels = null;
+
+    // Location of snapshot after processing
+    private String s3ArchivedKey = null;
+    
+    // Step Function UUID
+    private UUID stepFunctionID = null;
+
+    public Parameters() {}
+
+    public Parameters(String s3Bucket, String s3key, UUID stepFunctionID) {
+        this.s3Bucket = s3Bucket;
+        this.s3Key = s3key;
+        this.stepFunctionID = stepFunctionID;
+    }
+    
+    public String getS3ArchivedKey() {
+        return s3ArchivedKey;
+    }
+
+    public void setS3ArchivedKey(String s3ArchivedKey) {
+        this.s3ArchivedKey = s3ArchivedKey;
+    }
+
+    public String getS3key() {
+        return s3Key;
+    }
+
+    public void setS3key(String s3key) {
+        this.s3Key = s3key;
+    }
+
+    public String getS3Bucket() {
+        return s3Bucket;
+    }
+
+    public void setS3Bucket(String s3Bucket) {
+        this.s3Bucket = s3Bucket;
+    }
+
+    public Boolean getSendAlert() {
+        return sendAlert;
+    }
+
+    public void setSendAlert(Boolean sendAlert) {
+        this.sendAlert = sendAlert;
+    }
+
+    public void setRekognitionLabels(Map<String, Float> rekognitionLabels) {
+        this.rekognitionLabels = rekognitionLabels;
+    }
+
+    public Map<String, Float> getRekognitionLabels() {
+        if (this.rekognitionLabels == null) {
+            this.rekognitionLabels = new HashMap<String, Float>();
+        }
+        return this.rekognitionLabels;
+    }
+
+    public UUID getStepFunctionID(){
+        return this.stepFunctionID;
+    }
+    
+    public void setStepFunctionID(UUID id){
+        this.stepFunctionID = id;
+    }
 
     @Override
-    public Parameters handleRequest(Parameters parameters, Context context) {
-
-        context.getLogger().log("Input Function [" + context.getFunctionName() + 
-                "], Parameters [" + parameters + "]");
-
-        // Create Rekognition client using the parameters available form the runtime context
-        AmazonRekognition rekognitionClient = 
-                AmazonRekognitionClientBuilder.defaultClient();
-
-        // Create a Rekognition request
-        DetectLabelsRequest request = new DetectLabelsRequest().withImage(new Image()
-                .withS3Object(new S3Object().withName(parameters.getS3key())
-                        .withBucket(parameters.getS3Bucket())));
-
-        // Call the Rekognition Service
-        DetectLabelsResult result = rekognitionClient.detectLabels(request);
-
-        // Transfer labels and confidence scores over to Parameter POJO
-        for (Label label : result.getLabels()) {
-            parameters.getRekognitionLabels().put(label.getName(), label.getConfidence());
-        }
-
-        context.getLogger().log("Output Function [" + context.getFunctionName() +
-                "], Parameters [" + parameters + "]");
-
-        // Return the result (will be serialised to JSON)
-        return parameters;
+    public String toString() {
+        return "Parameters [s3Key=" + s3Key + ", s3Bucket=" + s3Bucket + ", sendAlert=" + sendAlert
+                + ", rekognitionLabels=" + rekognitionLabels + ", s3ArchivedKey=" + s3ArchivedKey + ", stepFunctionID="
+                + stepFunctionID + "]";
     }
 }
