@@ -12,7 +12,7 @@ You can also check out [this presentation](https://vimeo.com/233849443) from Jav
 
 Both __Java__ and __Node.js__ versions of the AWS Lambda Functions are provided.  Due to naming differences I have also provided seperate Step Function definitions for both the Java and Node.js versions.
 
-Heres a [blogpost describing the differences between the two versions](https://www.bouvet.no/bouvet-deler/comparing-java-and-node.js-on-aws-lambda).
+Heres another [blogpost that describes the differences between the two versions](https://www.bouvet.no/bouvet-deler/comparing-java-and-node.js-on-aws-lambda).
 
 ## Contents
 
