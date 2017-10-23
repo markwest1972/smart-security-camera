@@ -77,7 +77,3 @@ To make your S3 even more secure you can swop "*" with the full **ARN** for the 
 5. Implement all your [aws-lambda-functions](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions) and test them individually.
 6. Implement your [aws-step-function](https://github.com/markwest1972/smart-security-camera/tree/master/aws-step-functions). Test it.
 7. Set up the S3 Trigger ([Java](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/java/s3-trigger-image-processing) or [Node.js](https://github.com/markwest1972/smart-security-camera/tree/master/aws-lambda-functions/nodejs/s3-trigger-image-processing)) that triggers the Step Function.
-
-[![security status](https://www.meterian.io/badge/gh/markwest1972/smart-security-camera/security)](https://www.meterian.io/report/gh/markwest1972/smart-security-camera)
-
-[![stability status](https://www.meterian.io/badge/gh/markwest1972/smart-security-camera/stability)](https://www.meterian.io/report/gh/markwest1972/smart-security-camera)
