@@ -44,7 +44,8 @@ exports.handler = (event, context, callback) => {
       attachments: [
         {
             filename: localFile,
-            path: process.env.S3_URL_PREFIX + bucket + '/'+ filename
+            //path: process.env.S3_URL_PREFIX + bucket + '/'+ filename
+            path: s3.getSignedUrl('getObject', {  Bucket: bucket, Key: filename, Expires: 360})
         }
       ]
   }
