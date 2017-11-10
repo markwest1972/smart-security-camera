@@ -68,7 +68,7 @@ public class SesSendNotificationHandler implements RequestHandler<Parameters, Pa
             content.addBodyPart(wrap);
 
             // Create an S3 URL reference to the snapshot that will be attached to this email
-            URL attachmentURL = new URL(System.getenv("S3_URL_PREFIX") + parameters.getS3Bucket() + '/' + parameters.getS3Key());
+            URL attachmentURL = createSignedURL(parameters.getS3Bucket(), parameters.getS3Key());
 
             StringBuilder sb = new StringBuilder();
             String id = UUID.randomUUID().toString();
@@ -113,5 +113,29 @@ public class SesSendNotificationHandler implements RequestHandler<Parameters, Pa
         context.getLogger().log("Output Function [" + context.getFunctionName() + "], Parameters [" + parameters + "]");
 
         return parameters;
+    }
+    
+    /**
+     * Create pre-signed key for ease of access to S3 object
+     */
+    private URL createSignedURL(String s3Bucket, String s3Key){
+    
+        AmazonS3 s3client = AmazonS3ClientBuilder.defaultClient();
+        
+        // Set expiration to 1 hour
+        java.util.Date expiration = new java.util.Date();
+        long msec = expiration.getTime();
+        msec += 1000 * 60 * 60; // 1 hour.
+        expiration.setTime(msec);
+                     
+        // Generate signed key
+        GeneratePresignedUrlRequest generatePresignedUrlRequest = 
+                      new GeneratePresignedUrlRequest(s3Bucket, s3Key);
+        
+        generatePresignedUrlRequest.setMethod(HttpMethod.GET); // Default.
+        generatePresignedUrlRequest.setExpiration(expiration);
+                     
+        // Return key
+        return s3client.generatePresignedUrl(generatePresignedUrlRequest); 
     }
 }
