@@ -5,13 +5,13 @@ This directory contains an AWS Lamdba Definition for sending Error Emails for th
 ## Contents
 
 1. **index.js** - Node.js code triggered by exceptions in the processing of incoming images.
-2. **package.json** - npm dependancies.
+2. **package.json** - npm dependencies.
 
 ## How to use
 
 ### Creating a Zip File
 
-This function uses third party libraries.  This means that we have to create a zip file containing the code and all dependancies.
+This function uses third party libraries.  This means that we have to create a zip file containing the code and all dependencies.
 
 1. Get a local copy of this directory by using git clone.
 2. Use "npm install" to download dependancies.
