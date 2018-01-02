@@ -6,7 +6,7 @@ This directory contains an AWS Lamdba Definition for sending Alert Emails (with 
 ## Contents
 
 1. **index.js** - source code.
-2. **package.json** - npm dependancies.
+2. **package.json** - npm dependencies.
 
 ## How to use
 
@@ -15,7 +15,7 @@ This directory contains an AWS Lamdba Definition for sending Alert Emails (with 
 This function uses third party libraries.  This means that we have to create a zip file containing the code and all dependancies.
 
 1. Get a local copy of this directory by using git clone.
-2. Use "npm install" to download dependancies.
+2. Use "npm install" to download dependencies.
 3. Create a Zip file of index.js, package.json and the node_modules directory.  Note that these should be at the root of the Zip File.
 
 ### Memory Configuration
