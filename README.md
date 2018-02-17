@@ -23,11 +23,11 @@ Heres another [blogpost that describes the differences between the two versions]
 
 ## How to use
 
-**If you think you've found a typo, or need help getting things to work, get in contact and I'll try to help!**
+**Note that this repository is provided as a record of my Smart Camera Project, which was originally created in December 2016. It is currently neither actively updated or supported.**
 
-Each subdirectory in this repository has simple instructions.  Note that there are naming dependencies in this project, so make sure that any naming changes are applied across the repository.
+All the code is provided as is, and it is left to the user to work out the fine details for themselves. The AWS documentation is very useful here. Remember that [GIYF](http://www.giyf.com).
 
-All the code is provided as is, and it is left to the user to work out the fine details for themselves. The AWS documentation is very useful here. Remember that [GIYF](http://www.giyf.com) :)
+Each subdirectory in this repository has simple instructions. Note that there are naming dependencies in this project, so make sure that any naming changes are applied across the repository.
 
 ### Prerequisites
 
