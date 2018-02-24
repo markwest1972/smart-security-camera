@@ -29,6 +29,17 @@ Each subdirectory in this repository has simple instructions.  Note that there a
 
 All the code is provided as is, and it is left to the user to work out the fine details for themselves. The AWS documentation is very useful here. Remember that [GIYF](http://www.giyf.com) :)
 
+You can also setup this project by using the [Serverless Framework](https://serverless.com/). This version uses the implementation of the Node.js functions. For more details about the serverless config, see the [serverless.yml](/serverless.yml) file.
+
+Setting up is quite easy:
+
+1. First, be sure that [Serverless Framework is installed](https://serverless.com/framework/docs/getting-started/) on your machine.
+2. run `npm install` in the folders nodejs/nodemailer-send-notification and nodejs/nodemailer-error-handler.
+3. Change the [serverless.yml](/serverless.yml) and be sure to use a unique s3 bucket name. The script will create a s3 bucket which is used for the uploaded images. Also choose a AWS region which supports AWS Rekognition ;-)
+4. Run `serverless deploy` and your done!
+
+Note: you can delete the setup by running `serverless remove`. Be sure to empty the contents of the S3 bucket you configures as mentioned above. Serverless is not able to empty the bucket. If you don't do it by hand and run `serverless remove`, you wil run into an error (then you have to delete the CloudFormation stack by hand).
+
 ### Prerequisites
 
 The following prerequisites are required for working with this repository.

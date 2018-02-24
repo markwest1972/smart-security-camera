@@ -1,0 +1,189 @@
+service: smart-security-camera
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  memorySize: 256
+  stage: development
+  region: eu-west-1
+
+package:
+  individually: true
+  exclude:
+    - ./**
+
+functions:
+  s3-archive-image:
+    handler: aws-lambda-functions/nodejs/s3-archive-image/s3-archive-image.handler
+
+    package:
+      include:
+        - aws-lambda-functions/nodejs/s3-archive-image/**
+
+    iamRoleStatementsName: s3-archive-image
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - s3:*
+        Resource: "*"
+
+  nodemailer-error-handler:
+    handler: aws-lambda-functions/nodejs/nodemailer-error-handler/index.handler    
+
+    package:
+      include:
+        - aws-lambda-functions/nodejs/nodemailer-error-handler/**
+
+    iamRoleStatementsName: nodemailer-error-handler
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - "ses:*"
+        Resource: "*"
+
+  nodemailer-send-notification:
+    handler: aws-lambda-functions/nodejs/nodemailer-send-notification/index.handler
+
+    environment:
+      EMAIL_FROM: joost@kabisa.nl
+      EMAIL_RECIPIENT: joost@kabisa.nl
+
+    package:
+      include:
+        - aws-lambda-functions/nodejs/nodemailer-send-notification/**
+
+    iamRoleStatementsName: nodemailer-send-notification
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+           - "s3:GetObject"
+        Resource: "arn:aws:s3:::smart-security-camera-bucket/*"
+      - Effect: "Allow"
+        Action:
+          - "ses:*"
+        Resource: "*"
+
+  s3-trigger-image-processing:
+    handler: aws-lambda-functions/nodejs/s3-trigger-image-processing/s3-trigger-image-processing.handler
+
+    environment:
+      STEP_MACHINE_ARN: ${self:resources.Outputs.RekognitionStateMachine.Value}
+
+    events:
+      - s3:
+          bucket: smart-security-camera-bucket
+          event: s3:ObjectCreated:Put
+          rules:
+            - prefix: upload/
+            - suffix: .jpg
+
+    package:
+      include:
+        - aws-lambda-functions/nodejs/s3-trigger-image-processing/**
+
+    iamRoleStatementsName: s3-trigger-image-processing
+
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - s3:*
+        Resource: "*"
+      - Effect: "Allow"
+        Action:
+          - "states:StartExecution"
+        Resource: "*"
+
+  rekognition-evaluate-labels:
+    handler: aws-lambda-functions/nodejs/rekognition-evaluate-labels/rekognition-evaluate-labels.handler
+
+    package:
+      include:
+        - aws-lambda-functions/nodejs/rekognition-evaluate-labels/**
+
+    iamRoleStatementsName: rekognition-evaluate-labels
+
+  rekognition-image-assessment:
+    handler: aws-lambda-functions/nodejs/rekognition-image-assessment/rekognition-image-assessment.handler
+
+    package:
+      include:
+        - aws-lambda-functions/nodejs/rekognition-image-assessment/**
+
+    iamRoleStatementsName: rekognition-image-assessment
+
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+           - "s3:GetObject"
+        Resource: "arn:aws:s3:::smart-security-camera-bucket/*"
+      - Effect: "Allow"
+        Action:
+          - "rekognition:*"
+        Resource: "*"
+
+stepFunctions:
+  stateMachines:
+    hellostepfunc:
+      name: RekognitionStateMachine
+      definition:
+        Comment: Process incoming image files to find out if an email warning is required
+        StartAt: rekognition-image-assessment
+        States:
+          nodemailer-error-handler:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-nodemailer-error-handler"
+            End: true
+          rekognition-image-assessment:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-rekognition-image-assessment"
+            Catch:
+            - ErrorEquals:
+              - States.ALL
+              Next: nodemailer-error-handler
+            Next: rekognition-evaluate-labels
+          rekognition-evaluate-labels:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-rekognition-evaluate-labels"
+            Catch:
+            - ErrorEquals:
+              - States.ALL
+              Next: nodemailer-error-handler
+            Next: make-alert-decision
+          make-alert-decision:
+            Type: Choice
+            Choices:
+            - Variable: "$.Alert"
+              StringEquals: 'true'
+              Next: nodemailer-send-notification
+            - Variable: "$.Alert"
+              StringEquals: 'false'
+              Next: s3-archive-image
+            Default: s3-archive-image            
+          nodemailer-send-notification:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-nodemailer-send-notification"
+            Catch:
+            - ErrorEquals:
+              - States.ALL
+              Next: nodemailer-error-handler
+            Next: s3-archive-image
+          s3-archive-image:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-s3-archive-image"
+            Catch:
+            - ErrorEquals:
+              - States.ALL
+              Next: nodemailer-error-handler
+            End: True
+
+resources:
+  Outputs:
+    RekognitionStateMachine:
+      Description: The ARN of the example state machine
+      Value: 
+        Ref: RekognitionStateMachine
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
+  - serverless-iam-roles-per-function  

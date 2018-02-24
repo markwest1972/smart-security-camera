@@ -1,0 +1,11 @@
+{
+  "name": "sls-smart-camera",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-iam-roles-per-function": "^0.1.4",
+    "serverless-pseudo-parameters": "^1.4.0",
+    "serverless-step-functions": "^1.3.0"
+  }
+}
