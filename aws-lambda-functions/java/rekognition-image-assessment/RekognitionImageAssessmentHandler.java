@@ -36,7 +36,7 @@ public class RekognitionImageAssessmentHandler implements RequestHandler<Paramet
 
         // Create a Rekognition request
         DetectLabelsRequest request = new DetectLabelsRequest().withImage(new Image()
-                .withS3Object(new S3Object().withName(parameters.getS3key())
+                .withS3Object(new S3Object().withName(parameters.getS3Key())
                         .withBucket(parameters.getS3Bucket())));
 
         // Call the Rekognition Service
