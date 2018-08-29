@@ -10,6 +10,7 @@ import com.amazonaws.services.stepfunctions.model.StartExecutionRequest;
 import com.amazonaws.services.stepfunctions.model.StartExecutionResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.UUID;
 
 /**
  * When a new snapshot is uploaded to S3, this function is triggered. It
@@ -31,13 +32,15 @@ public class S3TriggerImageProcessingHandler implements RequestHandler<S3Event, 
 
         Parameters parameters = new Parameters(
                 event.getRecords().get(0).getS3().getBucket().getName(), 
-                event.getRecords().get(0).getS3().getObject().getKey());
+                event.getRecords().get(0).getS3().getObject().getKey(),
+                UUID.randomUUID());
 
         AWSStepFunctions client = AWSStepFunctionsClientBuilder.defaultClient();
         ObjectMapper jsonMapper = new ObjectMapper();
         
         StartExecutionRequest request = new StartExecutionRequest();
         request.setStateMachineArn(System.getenv("STEP_MACHINE_ARN"));
+        request.setName(parameters.getStepFunctionID().toString());
         try {
             request.setInput(jsonMapper.writeValueAsString(parameters));
         } catch (JsonProcessingException e) {
