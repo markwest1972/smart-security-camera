@@ -23,7 +23,7 @@ Heres another [blogpost that describes the differences between the two versions]
 
 ## How to use
 
-**Note that this repository is provided as a record of my Smart Camera Project, which was originally created in December 2016. It is currently neither actively updated or supported.**
+**Note that this repository is provided as a record of my Smart Camera Project, which was originally created in December 2016 and further developed through to early 2018. It is a record for those interested and is not actively supported.**
 
 All the code is provided as is, and it is left to the user to work out the fine details for themselves. The AWS documentation is very useful here. Remember that [GIYF](http://www.giyf.com).
 
