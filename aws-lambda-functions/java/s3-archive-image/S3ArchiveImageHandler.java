@@ -25,7 +25,7 @@ public class S3ArchiveImageHandler implements RequestHandler<Parameters, Paramet
         // flag
         String newFilename;
         if (parameters.getSendAlert()) {
-            newFilename = parameters.getS3Key().replace("upload/", "archive/alerts/");
+            newFilename =  parameters.getS3Key().replace("upload/", "archive/alerts/");
         } else {
             newFilename = parameters.getS3Key().replace("upload/", "archive/falsepositives/");
         }
