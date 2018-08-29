@@ -46,11 +46,11 @@ public class Parameters {
         this.s3ArchivedKey = s3ArchivedKey;
     }
 
-    public String getS3key() {
+    public String getS3Key() {
         return s3Key;
     }
 
-    public void setS3key(String s3key) {
+    public void setS3Key(String s3key) {
         this.s3Key = s3key;
     }
 
