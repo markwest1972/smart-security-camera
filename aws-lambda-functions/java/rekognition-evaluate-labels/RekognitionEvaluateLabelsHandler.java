@@ -16,7 +16,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
  */
 public class RekognitionEvaluateLabelsHandler implements RequestHandler<Parameters, Parameters> {
 
-    private final List<String> alertLabels = Arrays.asList("Human", "People", "Person", "Male", "Female", "Apparel", "Clothing", "Costume", "Portrait", "Pedestrian", "Child", "Kid", "Beard", "Hair", "Face");
+    private final List<String> alertLabels = Arrays.asList("Human", "People", "Person", "Male", "Female", "Portrait", "Pedestrian", "Child", "Kid", "Beard", "Hair", "Face");
 
     @Override
     public Parameters handleRequest(Parameters parameters, Context context) {
