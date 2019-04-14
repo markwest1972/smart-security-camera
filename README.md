@@ -70,7 +70,7 @@ To make your S3 even more secure you can swop "*" with the full **ARN** for the 
 
 ## Suggested Implementation Plan 
 
-1. [Set up your PiZero webcamera with Motion](https://utbrudd.bouvet.no/2017/01/05/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero/).
+1. [Set up your PiZero webcamera with Motion](https://www.bouvet.no/bouvet-deler/utbrudd/building-a-motion-activated-security-camera-with-the-raspberry-pi-zero).
 2. Create an AWS account.
 3. Create an S3 Bucket.
 4. Implement [s3-upload](https://github.com/markwest1972/smart-security-camera/tree/master/s3-upload) from PiZero to S3 Bucket.
